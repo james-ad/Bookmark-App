@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView {
             VStack(alignment: .center, spacing: 50, content: {
                 Spacer()
                 Text("Bookmark")
@@ -20,15 +19,7 @@ struct MainView: View {
                 CaptureButton()
                 Spacer()
             })
-                .tabItem {
-                    VStack {
-                    Image(systemName: "camera")
-                    Text("Capture Quote")
-                    }
-                }
-        }
-    }
-    
+        }    
 }
 
 struct MainView_Previews: PreviewProvider {

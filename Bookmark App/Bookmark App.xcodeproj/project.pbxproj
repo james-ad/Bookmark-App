@@ -19,6 +19,9 @@
 		1944ED46277D07E400EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
 		1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
 		1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
+		1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
+		1944ED4E278103AE00EF69B2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* Book.swift */; };
+		1944ED502781043200EF69B2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		190C07AE276DA7F0000E820D /* Bookmark_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITests.swift; sourceTree = "<group>"; };
 		190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1944ED45277D07E300EF69B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1944ED4B2780FE7900EF69B2 /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
+		1944ED4D278103AE00EF69B2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1944ED4F2781043200EF69B2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				190C0799276DA7F0000E820D /* Bookmark_App.xcdatamodeld */,
 				190C0794276DA7F0000E820D /* Preview Content */,
 				1944ED45277D07E300EF69B2 /* MainView.swift */,
+				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
+				1944ED4D278103AE00EF69B2 /* Book.swift */,
+				1944ED4F2781043200EF69B2 /* Quote.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -270,6 +279,9 @@
 			files = (
 				190C0798276DA7F0000E820D /* Persistence.swift in Sources */,
 				190C0791276DA7ED000E820D /* ContentView.swift in Sources */,
+				1944ED4E278103AE00EF69B2 /* Book.swift in Sources */,
+				1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */,
+				1944ED502781043200EF69B2 /* Quote.swift in Sources */,
 				190C078F276DA7ED000E820D /* Bookmark_AppApp.swift in Sources */,
 				1944ED46277D07E400EF69B2 /* MainView.swift in Sources */,
 				190C079B276DA7F0000E820D /* Bookmark_App.xcdatamodeld in Sources */,
