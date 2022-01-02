@@ -22,6 +22,9 @@
 		1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
 		1944ED4E278103AE00EF69B2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* Book.swift */; };
 		1944ED502781043200EF69B2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* Quote.swift */; };
+		1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
+		1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
+		1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,7 @@
 		1944ED4B2780FE7900EF69B2 /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 		1944ED4D278103AE00EF69B2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		1944ED4F2781043200EF69B2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		1944ED512781095D00EF69B2 /* EditQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
 				1944ED4D278103AE00EF69B2 /* Book.swift */,
 				1944ED4F2781043200EF69B2 /* Quote.swift */,
+				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C0798276DA7F0000E820D /* Persistence.swift in Sources */,
 				190C0791276DA7ED000E820D /* ContentView.swift in Sources */,
 				1944ED4E278103AE00EF69B2 /* Book.swift in Sources */,
@@ -292,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C07A5276DA7F0000E820D /* Bookmark_AppTests.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
 			);
@@ -302,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */,
+				1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,
 				190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */,
 			);

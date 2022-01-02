@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Book: Identifiable {
-    var id = UUID()
-    var author: String
-    var title: String
-    var quotes: [Quote]
+public struct Book: Identifiable {
+    public var id = UUID()
+    public var author: String
+    public var title: String
+    public var quotes: [Quote]
 }
 
-let testData = [
+public let testData = [
     Book(author: "Leo Tolstoy", title: "Anna Karenina", quotes: [Quote(text: "Test text", pageNumber: 1, notes: nil)]),
     Book(author: "George Orwell", title: "1984", quotes: [Quote(text: "Test text", pageNumber: 1, notes: nil)]),
     Book(author: "Aldous Huxley", title: "Brave New World", quotes: [Quote(text: "Test text", pageNumber: 1, notes: nil)]),

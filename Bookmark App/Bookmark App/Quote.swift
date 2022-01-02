@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quote {
+public struct Quote {
     var text: String
     var pageNumber: Int
     var notes: String?

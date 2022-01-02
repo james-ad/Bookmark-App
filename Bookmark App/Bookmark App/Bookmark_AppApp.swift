@@ -16,11 +16,18 @@ struct Bookmark_AppApp: App {
             //            ContentView()
             //            .environment(\.managedObjectContext, persistenceController.container.viewContext)
             TabView {
-                MainView()
+//                MainView()
+//                    .tabItem {
+//                        VStack {
+//                            Image(systemName: "camera")
+//                            Text("Capture Quote")
+//                        }
+//                    }
+                EditQuoteView()
                     .tabItem {
                         VStack {
-                            Image(systemName: "camera")
-                            Text("Capture Quote")
+                            Image(systemName: "star")
+                            Text("Edit")
                         }
                     }
             }
