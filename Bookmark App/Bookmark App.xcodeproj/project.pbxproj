@@ -25,6 +25,15 @@
 		1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
+		1962B3752783C46D0094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
+		1962B3762783C4700094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
+		1962B3772783C4710094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
+		1962B3782783CB1A0094E845 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* Book.swift */; };
+		1962B3792783CB1A0094E845 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* Book.swift */; };
+		1962B37A2783CB370094E845 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* Quote.swift */; };
+		1962B37B2783CB380094E845 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* Quote.swift */; };
+		1962B37C2783CB960094E845 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
+		1962B37D2783CB960094E845 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,7 @@
 		1944ED4D278103AE00EF69B2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		1944ED4F2781043200EF69B2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		1944ED512781095D00EF69B2 /* EditQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteView.swift; sourceTree = "<group>"; };
+		1962B3742783C46D0094E845 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 				1944ED4D278103AE00EF69B2 /* Book.swift */,
 				1944ED4F2781043200EF69B2 /* Quote.swift */,
 				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
+				1962B3742783C46D0094E845 /* LibraryView.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -290,6 +301,7 @@
 				1944ED502781043200EF69B2 /* Quote.swift in Sources */,
 				190C078F276DA7ED000E820D /* Bookmark_AppApp.swift in Sources */,
 				1944ED46277D07E400EF69B2 /* MainView.swift in Sources */,
+				1962B3752783C46D0094E845 /* LibraryView.swift in Sources */,
 				190C079B276DA7F0000E820D /* Bookmark_App.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1962B3762783C4700094E845 /* LibraryView.swift in Sources */,
 				1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C07A5276DA7F0000E820D /* Bookmark_AppTests.swift in Sources */,
+				1962B3782783CB1A0094E845 /* Book.swift in Sources */,
+				1962B37A2783CB370094E845 /* Quote.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
+				1962B37C2783CB960094E845 /* BookStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +326,11 @@
 			files = (
 				190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */,
 				1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */,
+				1962B37D2783CB960094E845 /* BookStore.swift in Sources */,
+				1962B3792783CB1A0094E845 /* Book.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,
+				1962B3772783C4710094E845 /* LibraryView.swift in Sources */,
+				1962B37B2783CB380094E845 /* Quote.swift in Sources */,
 				190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
