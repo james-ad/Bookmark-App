@@ -18,6 +18,10 @@ struct LibraryView: View {
                 .onMove(perform: moveBook)
                 .onDelete(perform: deleteBook)
             }
+            .navigationTitle("Library")
+            .toolbar {
+                EditButton()
+            }
         }
     }
     
@@ -75,10 +79,6 @@ struct BookCell: View {
                 Spacer()
             }
             .frame(maxHeight: 66, alignment: .leading)
-        }
-        .navigationTitle("Library")
-        .toolbar {
-            EditButton()
         }
     }
 }
