@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Bookmark_AppApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject private var store = testStore
     
     var body: some Scene {
         WindowGroup {
@@ -23,7 +24,7 @@ struct Bookmark_AppApp: App {
                             Text("Capture Quote")
                         }
                     }
-                LibraryView()
+                LibraryView(store: store)
                     .tabItem {
                         VStack {
                             Image(systemName: "books.vertical")

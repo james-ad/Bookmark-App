@@ -7,8 +7,8 @@
 
 import Foundation
 
-class BookStore {
-    var books: [Book]
+class BookStore: ObservableObject {
+    @Published var books: [Book]
     
     init(books: [Book] = []) {
         self.books = books
