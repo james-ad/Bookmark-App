@@ -31,6 +31,13 @@ struct Bookmark_AppApp: App {
                             Text("Library")
                         }
                     }
+                BookSearch(store: store)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    }
             }
         }
     }

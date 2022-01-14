@@ -25,6 +25,9 @@
 		1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
+		196011792790F926005DC202 /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196011782790F926005DC202 /* BookSearch.swift */; };
+		1960117A2790F926005DC202 /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196011782790F926005DC202 /* BookSearch.swift */; };
+		1960117B2790F926005DC202 /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196011782790F926005DC202 /* BookSearch.swift */; };
 		1962B3752783C46D0094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1962B3762783C4700094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1962B3772783C4710094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
@@ -71,6 +74,7 @@
 		1944ED4D278103AE00EF69B2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		1944ED4F2781043200EF69B2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		1944ED512781095D00EF69B2 /* EditQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteView.swift; sourceTree = "<group>"; };
+		196011782790F926005DC202 /* BookSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearch.swift; sourceTree = "<group>"; };
 		1962B3742783C46D0094E845 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,7 @@
 				1944ED4F2781043200EF69B2 /* Quote.swift */,
 				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
 				1962B3742783C46D0094E845 /* LibraryView.swift */,
+				196011782790F926005DC202 /* BookSearch.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				1944ED46277D07E400EF69B2 /* MainView.swift in Sources */,
 				1962B3752783C46D0094E845 /* LibraryView.swift in Sources */,
 				190C079B276DA7F0000E820D /* Bookmark_App.xcdatamodeld in Sources */,
+				196011792790F926005DC202 /* BookSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +320,7 @@
 				1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C07A5276DA7F0000E820D /* Bookmark_AppTests.swift in Sources */,
 				1962B3782783CB1A0094E845 /* Book.swift in Sources */,
+				1960117A2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B37A2783CB370094E845 /* Quote.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
 				1962B37C2783CB960094E845 /* BookStore.swift in Sources */,
@@ -327,6 +334,7 @@
 				190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */,
 				1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				1962B37D2783CB960094E845 /* BookStore.swift in Sources */,
+				1960117B2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B3792783CB1A0094E845 /* Book.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,
 				1962B3772783C4710094E845 /* LibraryView.swift in Sources */,
