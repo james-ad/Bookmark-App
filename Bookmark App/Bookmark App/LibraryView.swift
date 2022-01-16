@@ -60,7 +60,7 @@ struct BookCell: View {
     var book: Book
     
     var body: some View {
-        NavigationLink(destination: Text(book.title)) {
+        NavigationLink(destination: BookQuotesView( image: book.imageName, title: book.title, quotes: book.quotes)) {
             HStack {
                 Image(book.imageName)
                     .resizable()
