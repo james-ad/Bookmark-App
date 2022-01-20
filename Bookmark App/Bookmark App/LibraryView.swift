@@ -20,7 +20,12 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .toolbar {
+                HStack {
                 EditButton()
+                    NavigationLink(destination: AddBookView()) {
+                        Image(systemName: "plus")
+                    }
+                }
             }
         }
     }
