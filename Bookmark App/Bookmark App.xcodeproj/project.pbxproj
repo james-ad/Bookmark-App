@@ -40,6 +40,7 @@
 		19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
+		1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */; };
 		19E068A72793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A82793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A92793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
@@ -83,6 +84,7 @@
 		196011782790F926005DC202 /* BookSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearch.swift; sourceTree = "<group>"; };
 		1962B3742783C46D0094E845 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		19669463279918DD00EFC4D8 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCaptureViewController.swift; sourceTree = "<group>"; };
 		19E068A62793D65100E52895 /* BookQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQuotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,15 +142,8 @@
 				190C0797276DA7F0000E820D /* Persistence.swift */,
 				190C0799276DA7F0000E820D /* Bookmark_App.xcdatamodeld */,
 				190C0794276DA7F0000E820D /* Preview Content */,
-				1944ED45277D07E300EF69B2 /* MainView.swift */,
-				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
-				1944ED4D278103AE00EF69B2 /* Book.swift */,
-				1944ED4F2781043200EF69B2 /* Quote.swift */,
-				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
-				1962B3742783C46D0094E845 /* LibraryView.swift */,
-				19669463279918DD00EFC4D8 /* AddBookView.swift */,
-				196011782790F926005DC202 /* BookSearch.swift */,
-				19E068A62793D65100E52895 /* BookQuotesView.swift */,
+				1992B84527ACA46E00F3B1A2 /* Views */,
+				1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -176,6 +171,22 @@
 				190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */,
 			);
 			path = "Bookmark AppUITests";
+			sourceTree = "<group>";
+		};
+		1992B84527ACA46E00F3B1A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1944ED45277D07E300EF69B2 /* MainView.swift */,
+				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
+				1944ED4D278103AE00EF69B2 /* Book.swift */,
+				1944ED4F2781043200EF69B2 /* Quote.swift */,
+				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
+				1962B3742783C46D0094E845 /* LibraryView.swift */,
+				19669463279918DD00EFC4D8 /* AddBookView.swift */,
+				196011782790F926005DC202 /* BookSearch.swift */,
+				19E068A62793D65100E52895 /* BookQuotesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				1944ED4E278103AE00EF69B2 /* Book.swift in Sources */,
 				1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */,
 				19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */,
+				1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */,
 				1944ED502781043200EF69B2 /* Quote.swift in Sources */,
 				190C078F276DA7ED000E820D /* Bookmark_AppApp.swift in Sources */,
 				1944ED46277D07E400EF69B2 /* MainView.swift in Sources */,
@@ -502,6 +514,8 @@
 				DEVELOPMENT_TEAM = Z7F2HM5PGN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bookmark-App-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Bookmark needs to access your camera in order to capture the quotes\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,6 +545,8 @@
 				DEVELOPMENT_TEAM = Z7F2HM5PGN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bookmark-App-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Bookmark needs to access your camera in order to capture the quotes\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

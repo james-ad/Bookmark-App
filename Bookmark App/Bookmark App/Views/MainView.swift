@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func takePhoto()
+}
+
 struct MainView: View {
     var body: some View {
             VStack(alignment: .center, spacing: 50, content: {
@@ -16,15 +20,21 @@ struct MainView: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                CaptureButton()
+                CaptureButton(delegate: self)
                 Spacer()
             })
-        }    
+        }
+    
+    var delegate: QuoteCaptureDelegate
+    
+    func handleTap() {
+        delegate.takePhoto()
+    }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(delegate: QuoteCaptureViewController())
     }
 }
 
@@ -45,7 +55,10 @@ struct CaptureButton: View {
         }
     }
     
+    var delegate: MainView
+    
     private func handleTap() {
         print("Button Tapped!!")
+        delegate.handleTap()
     }
 }

@@ -17,7 +17,7 @@ struct Bookmark_AppApp: App {
             //            ContentView()
             //            .environment(\.managedObjectContext, persistenceController.container.viewContext)
             TabView {
-                MainView()
+                MainView(delegate: QuoteCaptureViewController())
                     .tabItem {
                         VStack {
                             Image(systemName: "camera")
