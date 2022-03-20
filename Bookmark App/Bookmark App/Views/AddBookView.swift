@@ -14,7 +14,14 @@ struct AddBookView: View {
         VStack(alignment: .leading) {
             EntryField(titleText: "Author:", onSubmitAction: { print(self.$nameComponents) })
             EntryField(titleText: "Title:", onSubmitAction: { print(self.$nameComponents) })
-            EntryField(titleText: "Image (Optional)", onSubmitAction: { print(self.$nameComponents) })
+//            EntryField(titleText: "Image (Optional)", onSubmitAction: { print(self.$nameComponents) })
+            HStack {
+                Spacer()
+            Button("Choose Image", action: {
+                print("image chosededed!!")
+            })
+                Spacer()
+            }
             Spacer()
             
             HStack {
