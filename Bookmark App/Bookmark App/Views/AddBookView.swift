@@ -9,17 +9,20 @@ import SwiftUI
 
 struct AddBookView: View {
     @State private var nameComponents = PersonNameComponents()
+    @State private var shouldShowPhotoLibrary = false
     
     var body: some View {
         VStack(alignment: .leading) {
             EntryField(titleText: "Author:", onSubmitAction: { print(self.$nameComponents) })
             EntryField(titleText: "Title:", onSubmitAction: { print(self.$nameComponents) })
-//            EntryField(titleText: "Image (Optional)", onSubmitAction: { print(self.$nameComponents) })
             HStack {
                 Spacer()
             Button("Choose Image", action: {
-                print("image chosededed!!")
+                self.shouldShowPhotoLibrary = true
             })
+            .sheet(isPresented: $shouldShowPhotoLibrary) {
+                ImagePicker(sourceType: .photoLibrary)
+            }
                 Spacer()
             }
             Spacer()
@@ -29,7 +32,6 @@ struct AddBookView: View {
                 Button("Save", action: { print("Hola World!") })
                     .border(.black, width: 2)
                     .cornerRadius(5)
-                .padding(10)
                 Spacer()
             }
             Spacer()
