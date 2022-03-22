@@ -10,6 +10,7 @@ import SwiftUI
 struct AddBookView: View {
     @State private var nameComponents = PersonNameComponents()
     @State private var shouldShowPhotoLibrary = false
+    @State private var image = UIImage()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,7 +22,7 @@ struct AddBookView: View {
                 self.shouldShowPhotoLibrary = true
             })
             .sheet(isPresented: $shouldShowPhotoLibrary) {
-                ImagePicker(sourceType: .photoLibrary)
+                ImagePicker(selectedImage: self.$image, sourceType: .photoLibrary)
             }
                 Spacer()
             }

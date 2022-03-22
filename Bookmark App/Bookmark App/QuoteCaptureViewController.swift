@@ -13,7 +13,7 @@ import Vision
 //    First, make your view controller conform to both UINavigationControllerDelegate, and UIImagePickerControllerDelegate.
 class QuoteCaptureViewController: UIViewController, QuoteCaptureDelegate {
     @IBOutlet var bookmarkedQuote: UITextView!
-    let imagePickerVC = UIImagePickerController()
+//    let imagePickerVC = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +42,12 @@ class QuoteCaptureViewController: UIViewController, QuoteCaptureDelegate {
     }
     
     func takePhoto() {
-        print("WE HERE BISH")
         confirmPermissionToAccessCamera()
         guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else { return }
-        imagePickerVC.sourceType = .camera
-        imagePickerVC.allowsEditing = true
-        imagePickerVC.delegate = self
-        present(imagePickerVC, animated: true)
+//        imagePickerVC.sourceType = .camera
+//        imagePickerVC.allowsEditing = true
+//        imagePickerVC.delegate = self
+//        present(imagePickerVC, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
