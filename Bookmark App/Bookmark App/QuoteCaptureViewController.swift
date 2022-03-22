@@ -41,9 +41,9 @@ class QuoteCaptureViewController: UIViewController, QuoteCaptureDelegate {
         }
     }
     
-    func takePhoto() {
+    func confirmPhotoPermissions() -> Bool {
         confirmPermissionToAccessCamera()
-        guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else { return }
+        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
 //        imagePickerVC.sourceType = .camera
 //        imagePickerVC.allowsEditing = true
 //        imagePickerVC.delegate = self

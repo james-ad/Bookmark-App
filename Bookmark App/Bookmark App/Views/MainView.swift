@@ -8,10 +8,12 @@
 import SwiftUI
 
 protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func takePhoto()
+    func confirmPhotoPermissions() -> Bool
 }
 
 struct MainView: View {
+    @State private var shouldOpenUserCamera = false
+    @State private var image = UIImage()
     var body: some View {
             VStack(alignment: .center, spacing: 50, content: {
                 Spacer()
@@ -21,6 +23,9 @@ struct MainView: View {
                 Spacer()
                 Spacer()
                 CaptureButton(delegate: self)
+                    .sheet(isPresented: $shouldOpenUserCamera) {
+                        ImagePicker(selectedImage: self.$image, sourceType: .camera)
+                    }
                 Spacer()
             })
         }
@@ -28,7 +33,7 @@ struct MainView: View {
     var delegate: QuoteCaptureDelegate
     
     func handleTap() {
-        delegate.takePhoto()
+        shouldOpenUserCamera = delegate.confirmPhotoPermissions()
     }
 }
 
