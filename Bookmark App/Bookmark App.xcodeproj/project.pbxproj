@@ -41,6 +41,7 @@
 		19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */; };
+		19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */; };
 		19C9882D27E6A84E002C6EAE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9882C27E6A84E002C6EAE /* ImagePicker.swift */; };
 		19E068A72793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A82793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
@@ -86,6 +87,7 @@
 		1962B3742783C46D0094E845 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		19669463279918DD00EFC4D8 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCaptureViewController.swift; sourceTree = "<group>"; };
+		19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedQuoteView.swift; sourceTree = "<group>"; };
 		19C9882C27E6A84E002C6EAE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		19E068A62793D65100E52895 /* BookQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQuotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 				19669463279918DD00EFC4D8 /* AddBookView.swift */,
 				196011782790F926005DC202 /* BookSearch.swift */,
 				19E068A62793D65100E52895 /* BookQuotesView.swift */,
+				19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C0798276DA7F0000E820D /* Persistence.swift in Sources */,
 				190C0791276DA7ED000E820D /* ContentView.swift in Sources */,
+				19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */,
 				1944ED4E278103AE00EF69B2 /* Book.swift in Sources */,
 				1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */,
 				19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */,
