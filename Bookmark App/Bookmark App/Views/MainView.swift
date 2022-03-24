@@ -12,8 +12,10 @@ protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerCont
 }
 
 struct MainView: View {
-    @State private var shouldOpenUserCamera = false
     @State private var image = UIImage()
+    @State private var shouldOpenUserCamera = false
+    @State private var didFinishPickingImage = false
+    
     var body: some View {
             VStack(alignment: .center, spacing: 50, content: {
                 Spacer()
@@ -24,16 +26,25 @@ struct MainView: View {
                 Spacer()
                 CaptureButton(delegate: self)
                     .sheet(isPresented: $shouldOpenUserCamera) {
-                        ImagePicker(selectedImage: self.$image, sourceType: .camera)
+                        ImagePicker(selectedImage: self.$image, didFinishPickingImage: false, sourceType: .camera, delegate: self)
                     }
                 Spacer()
             })
+            .sheet(isPresented: $didFinishPickingImage) {
+                CapturedQuoteView(image: self.image)
+            }
         }
     
     var delegate: QuoteCaptureDelegate
     
     func handleTap() {
+        print(shouldOpenUserCamera)
         shouldOpenUserCamera = delegate.confirmPhotoPermissions()
+        print(shouldOpenUserCamera)
+    }
+    
+    func handleImageSelected() {
+        didFinishPickingImage = true
     }
 }
 

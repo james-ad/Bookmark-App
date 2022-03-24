@@ -11,6 +11,7 @@ import SwiftUI
 struct Bookmark_AppApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var store = testStore
+    @State private var image = UIImage()
     
     var body: some Scene {
         WindowGroup {
