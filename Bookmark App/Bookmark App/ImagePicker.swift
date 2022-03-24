@@ -7,6 +7,8 @@
 
 import SwiftUI
 import UIKit
+import AVFoundation
+import Vision
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
@@ -19,6 +21,12 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var delegate: MainView? = nil
+    var capturedText: String? = nil {
+        didSet {
+            guard let newString = capturedText else { return }
+            delegate?.getTextFromImage(with: newString)
+        }
+    }
  
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
  
@@ -51,9 +59,55 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.selectedImage = image
                 parent.didFinishPickingImage = true
+                guard let cgImage = image.cgImage else { return }
+                
+                // Create Vision request to read text from image
+                let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let request = VNRecognizeTextRequest(completionHandler: self.recognizeTextHandler)
+                    do {
+                        try imageRequestHandler.perform([request])
+        //                let results = request.results
+                    } catch let error as NSError {
+                        print("Failed to perform image request: \(error)")
+                        return
+                    }
+                }
             }
      
             parent.presentationMode.wrappedValue.dismiss()
         }
+        
+        func recognizeTextHandler(request: VNRequest, error: Error?) {
+            guard let observations =
+                    request.results as? [VNRecognizedTextObservation] else {
+                return
+            }
+            let recognizedStrings = observations.compactMap { observation in
+                // Return the string of the top VNRecognizedText instance.
+                return observation.topCandidates(1).first?.string
+            }
+            
+            // Process the recognized strings.
+            print("Recognized Strings: \na\(recognizedStrings)")
+            DispatchQueue.main.async {
+                self.parent.capturedText = recognizedStrings.joined(separator: " ")
+            }
+    //        processResults(recognizedStrings)
+        }
     }
 }
+
+
+
+//class PreviewView: UIView {
+//    override class var layerClass: AnyClass {
+//        return AVCaptureVideoPreviewLayer.self
+//    }
+//
+//    /// Convenience wrapper to get layer as its statically known type.
+//    var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+//        return layer as! AVCaptureVideoPreviewLayer
+//    }
+//}

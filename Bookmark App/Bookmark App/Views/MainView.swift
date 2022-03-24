@@ -15,6 +15,7 @@ struct MainView: View {
     @State private var image = UIImage()
     @State private var shouldOpenUserCamera = false
     @State private var didFinishPickingImage = false
+    @State private var textFromImage: String = ""
     
     var body: some View {
             VStack(alignment: .center, spacing: 50, content: {
@@ -27,12 +28,12 @@ struct MainView: View {
                 CaptureButton(delegate: self)
                     .sheet(isPresented: $shouldOpenUserCamera) {
                         ImagePicker(selectedImage: self.$image, didFinishPickingImage: false, sourceType: .camera, delegate: self)
-                    }
+                    }.onAppear() { print("IMAGE SHEET APPEARED")}
                 Spacer()
             })
             .sheet(isPresented: $didFinishPickingImage) {
-                CapturedQuoteView(image: self.image)
-            }
+                CapturedQuoteView(image: self.image, stringText: self.textFromImage)
+            }.onAppear() { print("CAPTURED QUOTE APPEARED")}
         }
     
     var delegate: QuoteCaptureDelegate
@@ -45,6 +46,12 @@ struct MainView: View {
     
     func handleImageSelected() {
         didFinishPickingImage = true
+    }
+    
+    func getTextFromImage(with text: String) {
+        print("TEXT IS HERE: \(textFromImage)")
+        textFromImage = text
+        print("NOW HEREEEE: \(textFromImage)")
     }
 }
 
