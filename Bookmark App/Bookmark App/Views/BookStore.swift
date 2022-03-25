@@ -8,9 +8,9 @@
 import Foundation
 
 class BookStore: ObservableObject {
-    @Published var books: [Book]
+    @Published var books: [BookView]
     
-    init(books: [Book] = []) {
+    init(books: [BookView] = []) {
         self.books = books
     }
 }

@@ -50,7 +50,7 @@ enum BookTitles: String, CaseIterable, Identifiable {
 
 struct BookList: View {
     @State var selectedBook: String
-    var books: [Book] = []
+    var books: [BookView] = []
     
     var body: some View {
         VStack {
@@ -65,7 +65,7 @@ struct BookList: View {
         }
     }
     
-    init(books: [Book], selectedBook: String) {
+    init(books: [BookView], selectedBook: String) {
         self.books = books
         self.selectedBook = selectedBook
     }

@@ -47,10 +47,10 @@ struct LibraryView: View {
     private func addBook() {
         print("Book added")
         withAnimation {
-            store.books.append(Book(author: "James Dunn",
+            store.books.append(BookView(author: "James Dunn",
                                     imageName: "book",
                                     title: "Title",
-                                    quotes: [Quote(text: "Quote", pageNumber: 1, notes: nil)]))
+                                    quotes: [QuoteView(text: "Quote", pageNumber: 1, notes: nil)]))
         }
     }
 }
@@ -62,7 +62,7 @@ struct LibraryView_Previews: PreviewProvider {
 }
 
 struct BookCell: View {
-    var book: Book
+    var book: BookView
     
     var body: some View {
         NavigationLink(destination: BookQuotesView( image: book.imageName, title: book.title, quotes: book.quotes)) {

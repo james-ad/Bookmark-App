@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Bookmark_AppApp: App {
+struct Bookmark_App: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var store = testStore
-    @State private var image = UIImage()
+    @StateObject var capturedQuote = CapturedQuote()
     
     var body: some Scene {
         WindowGroup {
@@ -39,7 +39,7 @@ struct Bookmark_AppApp: App {
                             Text("Search")
                         }
                     }
-            }
+            }.environmentObject(capturedQuote)
         }
     }
 }

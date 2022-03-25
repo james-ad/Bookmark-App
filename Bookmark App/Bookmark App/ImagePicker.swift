@@ -13,6 +13,7 @@ import Vision
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject var capturedQuote: CapturedQuote
  
     var didFinishPickingImage: Bool = false {
         didSet {
@@ -21,12 +22,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var delegate: MainView? = nil
-    var capturedText: String? = nil {
-        didSet {
-            guard let newString = capturedText else { return }
-            delegate?.getTextFromImage(with: newString)
-        }
-    }
  
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
  
@@ -92,7 +87,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             // Process the recognized strings.
             print("Recognized Strings: \na\(recognizedStrings)")
             DispatchQueue.main.async {
-                self.parent.capturedText = recognizedStrings.joined(separator: " ")
+                self.parent.capturedQuote.quoteText = recognizedStrings.joined(separator: " ")
             }
     //        processResults(recognizedStrings)
         }

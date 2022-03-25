@@ -8,27 +8,17 @@
 import SwiftUI
 
 struct CapturedQuoteView: View {
-    @State var image: UIImage
-    @State var capturedQuote: String = "Hello, World" {
-        didSet {
-            print("capturedQuote: \(capturedQuote)")
-        }
-    }
-    var stringText: String = "" {
-        didSet {
-            print("WAAAAAAAA: \(capturedQuote)")
-        }
-    }
+    @EnvironmentObject var capturedQuote: CapturedQuote
+
     var body: some View {
 //        NavigationView {
         Spacer()
-            TextEditor(text: $capturedQuote)
+        TextEditor(text: $capturedQuote.quoteText)
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 .border(.black, width: 2)
         Spacer()
             Button("Save Quote", action: {
-                print("Le captured quote: \($capturedQuote)")
-                print("OEHWO: \(stringText)")
+                print("Le captured quote: \($capturedQuote.quoteText)")
             })
         Spacer()
 //        }
@@ -37,6 +27,6 @@ struct CapturedQuoteView: View {
 
 struct CapturedQuoteView_Previews: PreviewProvider {
     static var previews: some View {
-        CapturedQuoteView(image: UIImage(), capturedQuote: "Hola, World")
+        CapturedQuoteView()
     }
 }

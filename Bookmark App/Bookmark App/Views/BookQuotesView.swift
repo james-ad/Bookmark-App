@@ -10,7 +10,7 @@ import SwiftUI
 struct BookQuotesView: View {
     @State var image: String
     @State var title: String
-    @State var quotes: [Quote]
+    @State var quotes: [QuoteView]
     
     var body: some View {
         VStack {

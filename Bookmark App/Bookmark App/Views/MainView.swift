@@ -28,12 +28,12 @@ struct MainView: View {
                 CaptureButton(delegate: self)
                     .sheet(isPresented: $shouldOpenUserCamera) {
                         ImagePicker(selectedImage: self.$image, didFinishPickingImage: false, sourceType: .camera, delegate: self)
-                    }.onAppear() { print("IMAGE SHEET APPEARED")}
+                    }
                 Spacer()
             })
             .sheet(isPresented: $didFinishPickingImage) {
-                CapturedQuoteView(image: self.image, stringText: self.textFromImage)
-            }.onAppear() { print("CAPTURED QUOTE APPEARED")}
+                CapturedQuoteView()
+            }
         }
     
     var delegate: QuoteCaptureDelegate
@@ -46,13 +46,7 @@ struct MainView: View {
     
     func handleImageSelected() {
         didFinishPickingImage = true
-    }
-    
-    func getTextFromImage(with text: String) {
-        print("TEXT IS HERE: \(textFromImage)")
-        textFromImage = text
-        print("NOW HEREEEE: \(textFromImage)")
-    }
+    }    
 }
 
 struct MainView_Previews: PreviewProvider {
