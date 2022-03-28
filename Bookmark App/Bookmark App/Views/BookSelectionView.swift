@@ -8,36 +8,56 @@
 import SwiftUI
 
 struct BookSelectionView: View {
-    @ObservedObject var store: BookStore
-    @State private var selectedBook: String = "..."
+    @EnvironmentObject var store: BookStore
+    @EnvironmentObject var capturedQuote: CapturedQuote
+    @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteView(text: "")])
     
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(store.books) { book in
                     ScrollableBook(book: book)
-                        .background(book.title == selectedBook ? .mint : .clear)
+                    // TODO: Consider using id here instead
+                        .background(book.title == selectedBook.title ? .mint : .clear)
                         .onTapGesture {
                             print(book.title)
-                            selectedBook = book.title
+                            selectedBook = book
                         }
                 }
             }.frame(maxHeight: 300)
         }
         .background(.gray)
         
-        HStack {
-            Text("Book selected: \(selectedBook)")
-            Button("Save") {
-                print(selectedBook)
+        VStack {
+            Text("Book selected: \(selectedBook.title)")
+            Button(action: saveQuoteToSelectedBook) {
+                Text("Save")
             }
+            .opacity(selectedBook.title.isEmpty ? 0.0 : 1.0)
+        }
+    }
+    
+    func saveQuoteToSelectedBook() {
+        // TODO: This can probably be made more efficient with a dictionary
+        for var (index, book) in store.books.enumerated() {
+            
+            if book.id == selectedBook.id {
+                print("BOOCH: \(book.quotes)")
+                book.quotes.append(QuoteView(text: capturedQuote.quoteText))
+                print("BOOCH: \(book.quotes)")
+                store.books[index] = book
+            }
+//            if book.title == selectedBook.title {
+//                let quoteView = QuoteView(text: capturedQuote.quoteText)
+//                book.addQuote(quote: quoteView)
+//            }
         }
     }
 }
 
 struct BookSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        BookSelectionView(store: testStore)
+        BookSelectionView()
     }
 }
 

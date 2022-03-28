@@ -15,4 +15,14 @@ class BookStore: ObservableObject {
     }
 }
 
-let testStore = BookStore(books: testData)
+//var testStore = BookStore(books: testData)
+
+var testStore: BookStore {
+    var library: [BookView] = []
+    
+    for book in testLibrary {
+        let bookView = BookView(author: book.author, imageName: book.imageName, title: book.title, quotes: book.quotes)
+        library.append(bookView)
+    }
+    return BookStore(books: library)
+}

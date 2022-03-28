@@ -7,7 +7,7 @@
 
 import Combine
 
-@MainActor class CapturedQuote: ObservableObject {
+class CapturedQuote: ObservableObject {
     @Published var quoteText: String = ""
     
     init(quotedText: String = "") {

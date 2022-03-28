@@ -25,21 +25,23 @@ struct Bookmark_App: App {
                             Text("Capture Quote")
                         }
                     }
-                LibraryView(store: store)
+                LibraryView()
                     .tabItem {
                         VStack {
                             Image(systemName: "books.vertical")
                             Text("Library")
                         }
                     }
-                BookSearch(store: store)
+                BookSearch()
                     .tabItem {
                         VStack {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
                         }
                     }
-            }.environmentObject(capturedQuote)
+            }
+            .environmentObject(capturedQuote)
+            .environmentObject(store)
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @ObservedObject var store: BookStore
+    @EnvironmentObject var store: BookStore
     var body: some View {
         NavigationView {
             List {
@@ -57,7 +57,7 @@ struct LibraryView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(store: testStore)
+        LibraryView()
     }
 }
 

@@ -20,7 +20,7 @@ struct CapturedQuoteView: View {
                     .border(.black, width: 2)
                 Spacer()
                 Button("Save Quote", action: { saveButtonTapped = true })
-                NavigationLink(destination: BookSelectionView(store: testStore), isActive: $saveButtonTapped) { EmptyView() }
+                NavigationLink(destination: BookSelectionView(), isActive: $saveButtonTapped) { EmptyView() }
                 Spacer()
                 Spacer()
             }

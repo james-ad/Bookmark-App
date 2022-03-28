@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookSearch: View {
-    @ObservedObject var store: BookStore
+    @EnvironmentObject var store: BookStore
     @State var searchText: String = ""
     var body: some View {
         NavigationView {
@@ -34,6 +34,6 @@ struct BookSearch: View {
 
 struct BookSearch_Previews: PreviewProvider {
     static var previews: some View {
-        BookSearch(store: testStore)
+        BookSearch()
     }
 }
