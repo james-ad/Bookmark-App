@@ -9,16 +9,29 @@ import SwiftUI
 
 struct BookSelectionView: View {
     @ObservedObject var store: BookStore
+    @State private var selectedBook: String = "..."
     
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(store.books) { book in
                     ScrollableBook(book: book)
+                        .background(book.title == selectedBook ? .mint : .clear)
+                        .onTapGesture {
+                            print(book.title)
+                            selectedBook = book.title
+                        }
                 }
             }.frame(maxHeight: 300)
         }
         .background(.gray)
+        
+        HStack {
+            Text("Book selected: \(selectedBook)")
+            Button("Save") {
+                print(selectedBook)
+            }
+        }
     }
 }
 
@@ -32,21 +45,22 @@ struct ScrollableBook: View {
     var book: BookView
     
     var body: some View {
-            VStack {
-                Image(book.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(3)
-                Spacer()
-                VStack(alignment: .leading) {
-                    Text(book.title)
-                    Text(book.author)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                Spacer()
-                Spacer()
+        VStack {
+            Image(book.imageName)
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(3)
+            Spacer()
+            VStack(alignment: .center) {
+                Text(book.title)
+                Text(book.author)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
-            .padding(15)
+            Spacer()
+            Spacer()
         }
+        .background(.clear)
+        .padding(15)
+    }
 }
