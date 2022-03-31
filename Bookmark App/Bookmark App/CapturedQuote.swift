@@ -8,9 +8,9 @@
 import Combine
 
 class CapturedQuote: ObservableObject {
-    @Published var quoteText: String = ""
+    @Published var text: String = ""
     
-    init(quotedText: String = "") {
-        self.quoteText = quotedText
+    init(text: String = "") {
+        self.text = text
     }
 }
