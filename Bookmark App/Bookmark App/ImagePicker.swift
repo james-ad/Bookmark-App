@@ -14,12 +14,8 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject var capturedQuote: CapturedQuote
- 
-    var didFinishPickingImage: Bool = false {
-        didSet {
-            delegate?.handleImageSelected()
-        }
-    }
+    @EnvironmentObject var cameraLauncher: CameraLauncher
+    
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var delegate: MainView? = nil
  
@@ -53,7 +49,7 @@ struct ImagePicker: UIViewControllerRepresentable {
      
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.selectedImage = image
-                parent.didFinishPickingImage = true
+                parent.cameraLauncher.didFinishPickingImage = true
                 guard let cgImage = image.cgImage else { return }
                 
                 // Create Vision request to read text from image
@@ -87,7 +83,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             // Process the recognized strings.
             print("Recognized Strings: \na\(recognizedStrings)")
             DispatchQueue.main.async {
-                self.parent.capturedQuote.quoteText = recognizedStrings.joined(separator: " ")
+                self.parent.capturedQuote.text = recognizedStrings.joined(separator: " ")
             }
     //        processResults(recognizedStrings)
         }

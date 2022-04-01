@@ -35,8 +35,6 @@
 		1962B3792783CB1A0094E845 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
 		1962B37A2783CB370094E845 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
 		1962B37B2783CB380094E845 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
-		1962B37C2783CB960094E845 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
-		1962B37D2783CB960094E845 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
 		19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
@@ -44,6 +42,7 @@
 		19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */; };
 		19C4BA4327EE002C006618EF /* CapturedQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4BA4227EE002C006618EF /* CapturedQuote.swift */; };
 		19C4BA4527EE55DE006618EF /* BookSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4BA4427EE55DE006618EF /* BookSelectionView.swift */; };
+		19C4BA4727F665FF006618EF /* CameraLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4BA4627F665FF006618EF /* CameraLauncher.swift */; };
 		19C9882D27E6A84E002C6EAE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9882C27E6A84E002C6EAE /* ImagePicker.swift */; };
 		19E068A72793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A82793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
@@ -92,6 +91,7 @@
 		19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedQuoteView.swift; sourceTree = "<group>"; };
 		19C4BA4227EE002C006618EF /* CapturedQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedQuote.swift; sourceTree = "<group>"; };
 		19C4BA4427EE55DE006618EF /* BookSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionView.swift; sourceTree = "<group>"; };
+		19C4BA4627F665FF006618EF /* CameraLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLauncher.swift; sourceTree = "<group>"; };
 		19C9882C27E6A84E002C6EAE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		19E068A62793D65100E52895 /* BookQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQuotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,8 +152,10 @@
 				190C0794276DA7F0000E820D /* Preview Content */,
 				1992B84527ACA46E00F3B1A2 /* Views */,
 				1992B84627ACA4F400F3B1A2 /* QuoteCaptureViewController.swift */,
+				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
 				19C9882C27E6A84E002C6EAE /* ImagePicker.swift */,
 				19C4BA4227EE002C006618EF /* CapturedQuote.swift */,
+				19C4BA4627F665FF006618EF /* CameraLauncher.swift */,
 			);
 			path = "Bookmark App";
 			sourceTree = "<group>";
@@ -187,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				1944ED45277D07E300EF69B2 /* MainView.swift */,
-				1944ED4B2780FE7900EF69B2 /* BookStore.swift */,
 				1944ED4D278103AE00EF69B2 /* BookView.swift */,
 				1944ED4F2781043200EF69B2 /* QuoteView.swift */,
 				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
@@ -339,6 +340,7 @@
 				1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */,
 				19C4BA4527EE55DE006618EF /* BookSelectionView.swift in Sources */,
 				19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */,
+				19C4BA4727F665FF006618EF /* CameraLauncher.swift in Sources */,
 				1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */,
 				19C4BA4327EE002C006618EF /* CapturedQuote.swift in Sources */,
 				1944ED502781043200EF69B2 /* QuoteView.swift in Sources */,
@@ -364,7 +366,6 @@
 				1960117A2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B37A2783CB370094E845 /* QuoteView.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
-				1962B37C2783CB960094E845 /* BookStore.swift in Sources */,
 				19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +376,6 @@
 			files = (
 				190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */,
 				1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */,
-				1962B37D2783CB960094E845 /* BookStore.swift in Sources */,
 				1960117B2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B3792783CB1A0094E845 /* BookView.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,

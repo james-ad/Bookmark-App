@@ -10,7 +10,7 @@ import Combine
 class CapturedQuote: ObservableObject {
     @Published var text: String = ""
     
-    init(text: String = "") {
-        self.text = text
+    init(quotedText: String = "") {
+        self.text = quotedText
     }
 }

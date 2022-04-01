@@ -14,7 +14,7 @@ protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerCont
 struct MainView: View {
     @State private var image = UIImage()
     @State private var shouldOpenUserCamera = false
-    @State private var didFinishPickingImage = false
+    @EnvironmentObject var cameraLauncher: CameraLauncher
     @State private var textFromImage: String = ""
     
     var body: some View {
@@ -27,11 +27,11 @@ struct MainView: View {
                 Spacer()
                 CaptureButton(delegate: self)
                     .sheet(isPresented: $shouldOpenUserCamera) {
-                        ImagePicker(selectedImage: self.$image, didFinishPickingImage: false, sourceType: .camera, delegate: self)
+                        ImagePicker(selectedImage: self.$image, sourceType: .camera, delegate: self)
                     }
                 Spacer()
             })
-            .sheet(isPresented: $didFinishPickingImage) {
+            .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
                 CapturedQuoteView()
             }
         }
@@ -45,7 +45,7 @@ struct MainView: View {
     }
     
     func handleImageSelected() {
-        didFinishPickingImage = true
+        cameraLauncher.didFinishPickingImage = true
     }    
 }
 

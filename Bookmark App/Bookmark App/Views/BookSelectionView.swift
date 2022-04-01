@@ -10,6 +10,7 @@ import SwiftUI
 struct BookSelectionView: View {
     @EnvironmentObject var store: BookStore
     @EnvironmentObject var capturedQuote: CapturedQuote
+    @EnvironmentObject var cameraLauncher: CameraLauncher
     @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteView(text: "")])
     
     var body: some View {
@@ -39,19 +40,16 @@ struct BookSelectionView: View {
     
     func saveQuoteToSelectedBook() {
         // TODO: This can probably be made more efficient with a dictionary
-        for var (index, book) in store.books.enumerated() {
+        for (index, var book) in store.books.enumerated() {
             
             if book.id == selectedBook.id {
                 print("BOOCH: \(book.quotes)")
-                book.quotes.append(QuoteView(text: capturedQuote.quoteText))
+                book.quotes.append(QuoteView(text: capturedQuote.text))
                 print("BOOCH: \(book.quotes)")
                 store.books[index] = book
             }
-//            if book.title == selectedBook.title {
-//                let quoteView = QuoteView(text: capturedQuote.quoteText)
-//                book.addQuote(quote: quoteView)
-//            }
         }
+        cameraLauncher.didFinishPickingImage = false
     }
 }
 

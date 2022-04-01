@@ -15,7 +15,7 @@ struct CapturedQuoteView: View {
         NavigationView {
             VStack {
                 Spacer()
-                TextEditor(text: $capturedQuote.quoteText)
+                TextEditor(text: $capturedQuote.text)
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                     .border(.black, width: 2)
                 Spacer()

@@ -12,6 +12,7 @@ struct Bookmark_App: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var store = testStore
     @StateObject var capturedQuote = CapturedQuote()
+    @StateObject private var cameraLauncher = CameraLauncher()
     
     var body: some Scene {
         WindowGroup {
@@ -24,7 +25,7 @@ struct Bookmark_App: App {
                             Image(systemName: "camera")
                             Text("Capture Quote")
                         }
-                    }
+                    }.environmentObject(cameraLauncher)
                 LibraryView()
                     .tabItem {
                         VStack {
