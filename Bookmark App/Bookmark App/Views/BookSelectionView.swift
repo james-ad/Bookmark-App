@@ -39,7 +39,7 @@ struct BookSelectionView: View {
     }
     
     func saveQuoteToSelectedBook() {
-        // TODO: This can probably be made more efficient with a dictionary
+        // TODO: This can probably be made more efficient with a dictionary or a tree
         for (index, var book) in store.books.enumerated() {
             
             if book.id == selectedBook.id {
