@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func confirmPhotoPermissions() -> Bool
