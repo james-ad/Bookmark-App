@@ -13,9 +13,9 @@ protocol QuoteCaptureDelegate: UINavigationControllerDelegate, UIImagePickerCont
 }
 
 struct MainView: View {
+    @EnvironmentObject var cameraLauncher: CameraLauncher
     @State private var image = UIImage()
     @State private var shouldOpenUserCamera = false
-    @EnvironmentObject var cameraLauncher: CameraLauncher
     @State private var textFromImage: String = ""
     
     var body: some View {
@@ -35,6 +35,16 @@ struct MainView: View {
             .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
                 CapturedQuoteView()
             }
+            .toast(isPresenting: $cameraLauncher.didSaveQuote,
+                   duration: 2,
+                   tapToDismiss: true,
+                   offsetY: -200,
+                   alert: {
+                AlertToast(displayMode: .banner(.pop),
+                           type: .complete(.green),
+                           title: "Quote saved!",
+                           style: .style(backgroundColor: .green, titleColor: .white, subTitleColor: nil, titleFont: nil, subTitleFont: nil))
+            })
         }
     
     var delegate: QuoteCaptureDelegate
