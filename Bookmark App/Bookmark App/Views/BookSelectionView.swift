@@ -50,6 +50,7 @@ struct BookSelectionView: View {
             }
         }
         cameraLauncher.didFinishPickingImage = false
+        cameraLauncher.didSaveQuote = true
     }
 }
 

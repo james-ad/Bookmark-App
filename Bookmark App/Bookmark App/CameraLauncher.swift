@@ -9,8 +9,10 @@ import Combine
 
 class CameraLauncher: ObservableObject {
     @Published var didFinishPickingImage = false
+    @Published var didSaveQuote = false
     
-    init(didFinishPickingImage: Bool = false) {
+    init(didFinishPickingImage: Bool = false, didSaveQuote: Bool = false) {
         self.didFinishPickingImage = didFinishPickingImage
+        self.didSaveQuote = didSaveQuote
     }
 }
