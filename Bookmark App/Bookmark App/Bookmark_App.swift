@@ -25,7 +25,7 @@ struct Bookmark_App: App {
                             Image(systemName: "camera")
                             Text("Capture Quote")
                         }
-                    }.environmentObject(cameraLauncher)
+                    }
                 LibraryView()
                     .tabItem {
                         VStack {
@@ -41,6 +41,7 @@ struct Bookmark_App: App {
                         }
                     }
             }
+            .environmentObject(cameraLauncher)
             .environmentObject(capturedQuote)
             .environmentObject(store)
         }
