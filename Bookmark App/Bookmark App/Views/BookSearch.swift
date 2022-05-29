@@ -10,6 +10,7 @@ import SwiftUI
 struct BookSearch: View {
     @EnvironmentObject var store: BookStore
     @State var searchText: String = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -18,6 +19,9 @@ struct BookSearch: View {
                     TextField("Search for title or author", text: $searchText)
                         .padding()
                         .border(.black, width: 2)
+                        .onChange(of: searchText) { newText in
+                            print(newText)
+                        }
                     Spacer()
                 }
                 
