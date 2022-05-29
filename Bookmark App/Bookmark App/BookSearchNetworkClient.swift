@@ -6,7 +6,42 @@
 //
 
 import Foundation
+import Combine
+
+struct ImageLink: Codable {
+    var smallThumbnail: String
+    var thumbnail: String
+}
+
+struct BookResult: Codable {
+    var title: String
+    var authors: [String]
+    var imageLinks: ImageLink
+}
+
+struct VolumeInfo: Codable {
+    var volumeInfo: BookResult
+}
+
+struct BookSearchResult: Codable {
+    var items: [VolumeInfo]
+}
 
 struct BookSearchNetworkClient {
-    
+    static func performBookSearch(withText text: String) async -> BookSearchResult? {
+        // Create URL
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=1984&projection=lite&printType=books") else {
+            print("Invalid URL")
+            return nil
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let response = try? JSONDecoder().decode(BookSearchResult.self, from: data)
+            return response
+        } catch (let error){
+            print("Error parsing Book search. Error: \(error)")
+        }
+        return nil
+    }
 }

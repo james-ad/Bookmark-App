@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 public struct BookView: Identifiable {
     public var id = UUID()
     public var author: String
-    public var imageName: String
+    public var imageName: String = "book"
     public var title: String
-    public var quotes: [QuoteView]
+    public var quotes: [QuoteView] = []
 }
 
 public var testData = [
@@ -49,7 +50,7 @@ public class Book {
     public var title: String
     public var quotes: [QuoteView]
     
-    init(author: String, imageName: String, title: String, quotes: [QuoteView]) {
+    init(author: String, imageName: String, title: String, quotes: [QuoteView] = []) {
         self.author = author
         self.imageName = imageName
         self.title = title

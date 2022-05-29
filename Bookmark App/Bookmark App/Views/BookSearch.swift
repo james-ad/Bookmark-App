@@ -10,6 +10,7 @@ import SwiftUI
 struct BookSearch: View {
     @EnvironmentObject var store: BookStore
     @State var searchText: String = ""
+    @State var searchResults: [BookView] = []
     
     var body: some View {
         NavigationView {
@@ -21,17 +22,35 @@ struct BookSearch: View {
                         .border(.black, width: 2)
                         .onChange(of: searchText) { newText in
                             print(newText)
+                            doThingy(text: newText)
                         }
                     Spacer()
                 }
                 
                 List {
-                    ForEach(store.books) { book in
-                        BookCell(book: book)
+                    ForEach(searchResults) { book in
+                        AsyncBookCell(book: book)
                     }
                 }
                 .navigationTitle("Search")
             }
+        }
+    }
+    
+    func doThingy(text: String) {
+        let foo = "Words"
+        print(foo)
+        Task {
+            guard let results = await BookSearchNetworkClient.performBookSearch(withText: text)?.items else { return }
+            print("BAR BAR BAR BAR: \(results)")
+            results.forEach { book in
+                let bookView = BookView(author: book.volumeInfo.authors[0],
+                                        imageName: book.volumeInfo.imageLinks.thumbnail,
+                                        title: book.volumeInfo.title,
+                                        quotes: [QuoteView(text: "Hello, World")])
+                searchResults.append(bookView)
+            }
+            
         }
     }
 }

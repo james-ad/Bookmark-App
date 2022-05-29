@@ -87,3 +87,33 @@ struct BookCell: View {
         }
     }
 }
+
+struct AsyncBookCell: View {
+    var book: BookView
+    init(book: BookView) {
+        self.book = book
+        print("brrrrOOOK: \(book.imageName)")
+    }
+    
+    var body: some View {
+        NavigationLink(destination: BookQuotesView( image: book.imageName, title: book.title, quotes: book.quotes)) {
+            HStack {
+                AsyncImage(url: URL(string: "\(book.imageName)"))
+                    .scaledToFit()
+                    .cornerRadius(3)
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                    Text(book.author)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+            }
+            .frame(maxHeight: 66, alignment: .leading)
+        }
+    }
+}
