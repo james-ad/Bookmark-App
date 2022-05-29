@@ -29,8 +29,9 @@ struct BookSearchResult: Codable {
 
 struct BookSearchNetworkClient {
     static func performBookSearch(withText text: String) async -> BookSearchResult? {
+        let searchQuery = text.components(separatedBy: " ").joined(separator: "+")
         // Create URL
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=1984&projection=lite&printType=books") else {
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(searchQuery)&projection=lite&printType=books") else {
             print("Invalid URL")
             return nil
         }

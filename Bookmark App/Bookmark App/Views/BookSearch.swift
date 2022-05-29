@@ -22,7 +22,11 @@ struct BookSearch: View {
                         .border(.black, width: 2)
                         .onChange(of: searchText) { newText in
                             print(newText)
+                            searchResults = []
                             doThingy(text: newText)
+                        }
+                        .onSubmit {
+                            doThingy(text: searchText)
                         }
                     Spacer()
                 }
@@ -38,14 +42,12 @@ struct BookSearch: View {
     }
     
     func doThingy(text: String) {
-        let foo = "Words"
-        print(foo)
         Task {
             guard let results = await BookSearchNetworkClient.performBookSearch(withText: text)?.items else { return }
-            print("BAR BAR BAR BAR: \(results)")
             results.forEach { book in
+                let secureImageURL = book.volumeInfo.imageLinks.thumbnail.replacingOccurrences(of: "http", with: "https")
                 let bookView = BookView(author: book.volumeInfo.authors[0],
-                                        imageName: book.volumeInfo.imageLinks.thumbnail,
+                                        imageName: secureImageURL,
                                         title: book.volumeInfo.title,
                                         quotes: [QuoteView(text: "Hello, World")])
                 searchResults.append(bookView)
