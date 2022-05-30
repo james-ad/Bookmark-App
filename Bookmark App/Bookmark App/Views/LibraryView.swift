@@ -91,9 +91,9 @@ struct BookCell: View {
 struct AsyncBookCell: View {
     var book: BookView
     var bookImage: UIImage = UIImage(systemName: "book")!
+    
     init(book: BookView) {
         self.book = book
-        print("brrrrOOOK: \(book.imageName)")
     }
         
     var body: some View {

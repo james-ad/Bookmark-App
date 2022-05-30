@@ -15,10 +15,18 @@ struct BookQuotesView: View {
     var body: some View {
         VStack {
             VStack {
-                Image(systemName: image)
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .border(.gray, width: 2)
                     .padding()
-                Text("Hello, World")
+                    .shadow(color: .black, radius: 4, x: 4, y: 4)
+                Text(title)
+                    .font(.title2)
             }
+            .padding()
+            .border(.gray, width: 5)
+            .cornerRadius(3)
             
             List {
                 ForEach(quotes) { quote in

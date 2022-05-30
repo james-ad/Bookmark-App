@@ -17,6 +17,8 @@
 		190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C07AE276DA7F0000E820D /* Bookmark_AppUITests.swift */; };
 		190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */; };
 		190DF5052842EEB0009F5ABF /* BookSearchNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DF5042842EEB0009F5ABF /* BookSearchNetworkClient.swift */; };
+		190DF50728446045009F5ABF /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
+		1938C29D2844656300683BA1 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1944ED46277D07E400EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
 		1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
 		1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
@@ -30,8 +32,6 @@
 		1960117A2790F926005DC202 /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196011782790F926005DC202 /* BookSearch.swift */; };
 		1960117B2790F926005DC202 /* BookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196011782790F926005DC202 /* BookSearch.swift */; };
 		1962B3752783C46D0094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
-		1962B3762783C4700094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
-		1962B3772783C4710094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1962B3782783CB1A0094E845 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
 		1962B3792783CB1A0094E845 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
 		1962B37A2783CB370094E845 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
@@ -370,11 +370,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1962B3762783C4700094E845 /* LibraryView.swift in Sources */,
 				19E068A82793D65100E52895 /* BookQuotesView.swift in Sources */,
 				1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */,
 				190C07A5276DA7F0000E820D /* Bookmark_AppTests.swift in Sources */,
 				1962B3782783CB1A0094E845 /* BookView.swift in Sources */,
+				1938C29D2844656300683BA1 /* LibraryView.swift in Sources */,
 				1960117A2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B37A2783CB370094E845 /* QuoteView.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
@@ -391,10 +391,10 @@
 				1960117B2790F926005DC202 /* BookSearch.swift in Sources */,
 				1962B3792783CB1A0094E845 /* BookView.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,
-				1962B3772783C4710094E845 /* LibraryView.swift in Sources */,
 				19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */,
 				1962B37B2783CB380094E845 /* QuoteView.swift in Sources */,
 				19E068A92793D65100E52895 /* BookQuotesView.swift in Sources */,
+				190DF50728446045009F5ABF /* LibraryView.swift in Sources */,
 				190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
