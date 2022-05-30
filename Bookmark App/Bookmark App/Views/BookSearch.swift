@@ -22,7 +22,7 @@ struct BookSearch: View {
                         .border(.black, width: 2)
                         .onChange(of: searchText) { newText in
                             print(newText)
-                            searchResults = []
+//                            searchResults = []
                             doThingy(text: newText)
                         }
                         .onSubmit {
@@ -44,15 +44,17 @@ struct BookSearch: View {
     func doThingy(text: String) {
         Task {
             guard let results = await BookSearchNetworkClient.performBookSearch(withText: text)?.items else { return }
+            // Reset/replace the current searchResults with the new results returned from the Google Books API
+            var newResults: [BookView] = []
             results.forEach { book in
                 let secureImageURL = book.volumeInfo.imageLinks.thumbnail.replacingOccurrences(of: "http", with: "https")
                 let bookView = BookView(author: book.volumeInfo.authors[0],
                                         imageName: secureImageURL,
                                         title: book.volumeInfo.title,
                                         quotes: [QuoteView(text: "Hello, World")])
-                searchResults.append(bookView)
+                newResults.append(bookView)
             }
-            
+            searchResults = newResults
         }
     }
 }
