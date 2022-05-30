@@ -21,12 +21,7 @@ struct BookSearch: View {
                         .padding()
                         .border(.black, width: 2)
                         .onChange(of: searchText) { newText in
-                            print(newText)
-//                            searchResults = []
-                            doThingy(text: newText)
-                        }
-                        .onSubmit {
-                            doThingy(text: searchText)
+                            performNewSearch(withText: newText)
                         }
                     Spacer()
                 }
@@ -41,7 +36,7 @@ struct BookSearch: View {
         }
     }
     
-    func doThingy(text: String) {
+    func performNewSearch(withText text: String) {
         Task {
             guard let results = await BookSearchNetworkClient.performBookSearch(withText: text)?.items else { return }
             // Reset/replace the current searchResults with the new results returned from the Google Books API
