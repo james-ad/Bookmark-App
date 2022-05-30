@@ -90,25 +90,23 @@ struct BookCell: View {
 
 struct AsyncBookCell: View {
     var book: BookView
-    var bookImage: UIImage = UIImage(systemName: "book")!
     
     init(book: BookView) {
         self.book = book
     }
         
     var body: some View {
-        NavigationLink(destination: BookQuotesView( image: book.imageName, title: book.title, quotes: book.quotes)) {
+        NavigationLink(destination: AsyncBookQuotesView(imageURL: book.imageName, title: book.title, quotes: book.quotes)) {
             HStack {
-                AsyncImage(url: URL(fileURLWithPath: book.imageName, isDirectory: true)) { image in
-                    image
-                        .resizable()
-                } placeholder: {
-//                    ProgressView()
-                    Image(systemName: "book")
-                }
-                    .scaledToFit()
-                    .cornerRadius(3)
-                Spacer()
+                AsyncImage(url: URL(string: book.imageName),
+                           content: { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(2)
+                        },
+                           placeholder: {
+                    ProgressView()
+                })
                 VStack(alignment: .leading) {
                     Text(book.title)
                     Text(book.author)
