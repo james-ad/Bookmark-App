@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		190C078F276DA7ED000E820D /* Bookmark_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C078E276DA7ED000E820D /* Bookmark_App.swift */; };
-		190C0791276DA7ED000E820D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C0790276DA7ED000E820D /* ContentView.swift */; };
 		190C0793276DA7F0000E820D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190C0792276DA7F0000E820D /* Assets.xcassets */; };
 		190C0796276DA7F0000E820D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190C0795276DA7F0000E820D /* Preview Assets.xcassets */; };
-		190C0798276DA7F0000E820D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C0797276DA7F0000E820D /* Persistence.swift */; };
 		190C079B276DA7F0000E820D /* Bookmark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 190C0799276DA7F0000E820D /* Bookmark.xcdatamodeld */; };
 		190C07A5276DA7F0000E820D /* Bookmark_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C07A4276DA7F0000E820D /* Bookmark_AppTests.swift */; };
 		190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C07AE276DA7F0000E820D /* Bookmark_AppUITests.swift */; };
@@ -78,10 +76,8 @@
 /* Begin PBXFileReference section */
 		190C078B276DA7ED000E820D /* Bookmark App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bookmark App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C078E276DA7ED000E820D /* Bookmark_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_App.swift; sourceTree = "<group>"; };
-		190C0790276DA7ED000E820D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		190C0792276DA7F0000E820D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		190C0795276DA7F0000E820D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		190C0797276DA7F0000E820D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		190C079A276DA7F0000E820D /* Bookmark_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmark_App.xcdatamodel; sourceTree = "<group>"; };
 		190C07A0276DA7F0000E820D /* Bookmark AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bookmark AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C07A4276DA7F0000E820D /* Bookmark_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppTests.swift; sourceTree = "<group>"; };
@@ -165,9 +161,7 @@
 			children = (
 				1938C2A12845281000683BA1 /* Storage */,
 				190C078E276DA7ED000E820D /* Bookmark_App.swift */,
-				190C0790276DA7ED000E820D /* ContentView.swift */,
 				190C0792276DA7F0000E820D /* Assets.xcassets */,
-				190C0797276DA7F0000E820D /* Persistence.swift */,
 				190C0799276DA7F0000E820D /* Bookmark.xcdatamodeld */,
 				190C0794276DA7F0000E820D /* Preview Content */,
 				1992B84527ACA46E00F3B1A2 /* Views */,
@@ -382,8 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */,
-				190C0798276DA7F0000E820D /* Persistence.swift in Sources */,
-				190C0791276DA7ED000E820D /* ContentView.swift in Sources */,
 				1938C2A3284528C900683BA1 /* StorageManager.swift in Sources */,
 				19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */,
 				1944ED4E278103AE00EF69B2 /* BookView.swift in Sources */,

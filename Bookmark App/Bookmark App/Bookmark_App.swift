@@ -20,7 +20,6 @@ struct Bookmark_App: App {
     // Register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    let persistenceController = PersistenceController.shared
     @StateObject private var store = testStore
     @StateObject var capturedQuote = CapturedQuote()
     @StateObject private var cameraLauncher = CameraLauncher()
