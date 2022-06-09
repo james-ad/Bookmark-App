@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
 // TODO: Work on setting up persistent storage after authentication so we can see what identifier is being associated with a user/session
 
 //class StorageManager: ObservableObject {

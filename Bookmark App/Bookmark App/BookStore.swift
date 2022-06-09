@@ -28,28 +28,28 @@ var testStore: BookStore {
 }
 
 
-class Library: ObservableObject {
-    @Published var books: [Book] {
-        didSet {
-            fillQuotes()
-        }
-    }
-    @Published var quotes: [QuoteView] = []
-    
-    init(books: [Book]) {
-        self.books = books
-    }
-}
-
-private extension Library {
-    func fillQuotes() {
-        var quotesCopy = self.quotes
-        self.books.forEach { book in
-            quotesCopy.append(contentsOf: book.quotes)
-//            book.quotes.forEach { quote in
-//                self.quotes.append(quote)
-//            }
-        }
-        self.quotes = quotesCopy
-    }
-}
+//class Library: ObservableObject {
+//    @Published var books: [Book] {
+//        didSet {
+//            fillQuotes()
+//        }
+//    }
+//    @Published var quotes: [QuoteView] = []
+//    
+//    init(books: [Book]) {
+//        self.books = books
+//    }
+//}
+//
+//private extension Library {
+//    func fillQuotes() {
+//        var quotesCopy = self.quotes
+//        self.books.forEach { book in
+//            quotesCopy.append(contentsOf: book.quotes)
+////            book.quotes.forEach { quote in
+////                self.quotes.append(quote)
+////            }
+//        }
+//        self.quotes = quotesCopy
+//    }
+//}
