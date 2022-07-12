@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LibraryView: View {
     @EnvironmentObject var store: BookStore
+    @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
+    
     var body: some View {
         NavigationView {
             List {

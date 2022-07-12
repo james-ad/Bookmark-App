@@ -20,8 +20,9 @@ struct Bookmark_App: App {
     // Register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject private var dataController = DataController()
     @StateObject private var store = testStore
-    @StateObject var capturedQuote = CapturedQuote()
+    @StateObject private var capturedQuote = CapturedQuote()
     @StateObject private var cameraLauncher = CameraLauncher()
     
     var body: some Scene {
@@ -52,6 +53,7 @@ struct Bookmark_App: App {
             .environmentObject(cameraLauncher)
             .environmentObject(capturedQuote)
             .environmentObject(store)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
