@@ -28,7 +28,7 @@ struct BookSearch: View {
                 
                 List {
                     ForEach(searchResults) { book in
-                        AsyncBookCell(book: book)
+                        AsyncBookCell(bookView: book)
                     }
                 }
                 .navigationTitle("Search")

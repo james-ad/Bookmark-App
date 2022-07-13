@@ -3,6 +3,7 @@
     <entity name="Book" representedClassName="Book" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="library" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="books" inverseEntity="Library"/>
         <relationship name="quotes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Quote" inverseName="book" inverseEntity="Quote"/>
@@ -18,7 +19,7 @@
         <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="quotes" inverseEntity="Book"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-43.48046875" positionY="-13.64453125" width="128" height="118"/>
+        <element name="Book" positionX="-43.48046875" positionY="-13.64453125" width="128" height="119"/>
         <element name="Library" positionX="-28.1171875" positionY="-27.84765625" width="128" height="73"/>
         <element name="Quote" positionX="-44.76953125" positionY="19.28125" width="128" height="103"/>
     </elements>

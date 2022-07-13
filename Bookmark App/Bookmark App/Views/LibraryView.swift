@@ -10,6 +10,7 @@ import SwiftUI
 struct LibraryView: View {
     @EnvironmentObject var store: BookStore
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         NavigationView {
@@ -54,6 +55,8 @@ struct LibraryView: View {
                                     title: "Title",
                                     quotes: [QuoteView(text: "Quote", pageNumber: 1, notes: nil)]))
         }
+        
+        
     }
 }
 
@@ -66,8 +69,14 @@ struct LibraryView_Previews: PreviewProvider {
 struct BookCell: View {
     var book: BookView
     
+//    ForEach(Array(sample.stepps! as Set), id: \.self) { step in
+//        // step is NSObject type, so you'll need it cast to your model
+//    }
+    
     var body: some View {
-        NavigationLink(destination: BookQuotesView( image: book.imageName, title: book.title, quotes: book.quotes)) {
+        NavigationLink(destination: BookQuotesView(image: book.imageName,
+                                                   title: book.title,
+                                                   quotes: book.quotes)) {
             HStack {
                 Image(book.imageName)
                     .resizable()
@@ -90,17 +99,18 @@ struct BookCell: View {
     }
 }
 
+// AsyncBookCell is for displaying book info fetched from google books API on the search page
 struct AsyncBookCell: View {
-    var book: BookView
+    var bookView: BookView
     
-    init(book: BookView) {
-        self.book = book
+    init(bookView: BookView) {
+        self.bookView = bookView
     }
         
     var body: some View {
-        NavigationLink(destination: AsyncBookQuotesView(imageURL: book.imageName, title: book.title, quotes: book.quotes)) {
+        NavigationLink(destination: AsyncBookQuotesView(bookView: bookView)) {
             HStack {
-                AsyncImage(url: URL(string: book.imageName),
+                AsyncImage(url: URL(string: bookView.imageName),
                            content: { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
@@ -110,8 +120,8 @@ struct AsyncBookCell: View {
                     ProgressView()
                 })
                 VStack(alignment: .leading) {
-                    Text(book.title)
-                    Text(book.author)
+                    Text(bookView.title)
+                    Text(bookView.author)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }

@@ -20,6 +20,7 @@ extension Book {
     @NSManaged public var id: UUID?
     @NSManaged public var title: String?
     @NSManaged public var quotes: NSSet?
+    @NSManaged public var imageURL: String?
     @NSManaged public var library: Library?
 
 }

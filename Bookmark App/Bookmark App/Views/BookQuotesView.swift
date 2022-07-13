@@ -38,14 +38,15 @@ struct BookQuotesView: View {
 }
 
 struct AsyncBookQuotesView: View {
-    @State var imageURL: String
-    @State var title: String
-    @State var quotes: [QuoteView]
+    @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
+    var bookView: BookView
     
     var body: some View {
         VStack {
             VStack {
-                AsyncImage(url: URL(string: imageURL),
+                AsyncImage(url: URL(string: bookView.imageName),
                            content: { image in
                     image
                         .resizable()
@@ -56,7 +57,7 @@ struct AsyncBookQuotesView: View {
                 }, placeholder: {
                     ProgressView()
                 })
-                Text(title)
+                Text(bookView.title)
                     .font(.title2)
             }
             .padding()
@@ -64,11 +65,23 @@ struct AsyncBookQuotesView: View {
             .cornerRadius(3)
             
             List {
-                ForEach(quotes) { quote in
+                ForEach(bookView.quotes) { quote in
                     Text(quote.text)
                 }
             }
+            
+            Button("Add book to library", action: {
+                let book = Book(context: moc)
+                book.id = bookView.id
+                book.author = bookView.author
+                book.title = bookView.title
+                book.imageURL = bookView.imageName
+                print("Book was successfully added to Core Data")
+                presentationMode.wrappedValue.dismiss()
+            })
         }
+        Spacer()
+        Spacer()
     }
 }
 
