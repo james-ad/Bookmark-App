@@ -76,9 +76,11 @@ struct AsyncBookQuotesView: View {
                 book.author = bookView.author
                 book.title = bookView.title
                 book.imageURL = bookView.imageName
+                try? moc.save()
                 print("Book was successfully added to Core Data")
                 presentationMode.wrappedValue.dismiss()
             })
+            .padding()
         }
         Spacer()
         Spacer()

@@ -12,11 +12,14 @@ struct LibraryView: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @Environment(\.managedObjectContext) var moc
     
+    //    ForEach(Array(sample.stepps! as Set), id: \.self) { step in
+    //        // step is NSObject type, so you'll need it cast to your model
+    //    }
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.books) { book in
-                    BookCell(book: book)
+                ForEach(library) { book in
+                    AsyncBookCell(bookView: bookViewFromBook(book: book))
                 }
                 .onMove(perform: moveBook)
                 .onDelete(perform: deleteBook)
@@ -31,6 +34,20 @@ struct LibraryView: View {
                 }
             }
         }
+    }
+    
+    private func bookViewFromBook(book: Book) -> BookView {
+        var quotes: [QuoteView] = []
+        book.quotes?.forEach { quote in
+            let q = quote as? Quote
+            let qv = QuoteView(id: q?.id ?? UUID(), text: q?.text ?? "", pageNumber: Int(q?.pageNumber ?? 0), notes: nil)
+            quotes.append(qv)
+        }
+        return BookView(id: book.id ?? UUID(),
+                                author: book.author ?? "no author",
+                                imageName: book.imageURL ?? "",
+                                title: book.title ?? "no title",
+                                quotes: quotes)
     }
     
     private func moveBook(from: IndexSet, to: Int) {
@@ -63,74 +80,5 @@ struct LibraryView: View {
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
         LibraryView()
-    }
-}
-
-struct BookCell: View {
-    var book: BookView
-    
-//    ForEach(Array(sample.stepps! as Set), id: \.self) { step in
-//        // step is NSObject type, so you'll need it cast to your model
-//    }
-    
-    var body: some View {
-        NavigationLink(destination: BookQuotesView(image: book.imageName,
-                                                   title: book.title,
-                                                   quotes: book.quotes)) {
-            HStack {
-                Image(book.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(3)
-                Spacer()
-                VStack(alignment: .leading) {
-                    Text(book.title)
-                    Text(book.author)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-            }
-            .frame(maxHeight: 66, alignment: .leading)
-        }
-    }
-}
-
-// AsyncBookCell is for displaying book info fetched from google books API on the search page
-struct AsyncBookCell: View {
-    var bookView: BookView
-    
-    init(bookView: BookView) {
-        self.bookView = bookView
-    }
-        
-    var body: some View {
-        NavigationLink(destination: AsyncBookQuotesView(bookView: bookView)) {
-            HStack {
-                AsyncImage(url: URL(string: bookView.imageName),
-                           content: { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(2)
-                        },
-                           placeholder: {
-                    ProgressView()
-                })
-                VStack(alignment: .leading) {
-                    Text(bookView.title)
-                    Text(bookView.author)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-            }
-            .frame(maxHeight: 66, alignment: .leading)
-        }
     }
 }

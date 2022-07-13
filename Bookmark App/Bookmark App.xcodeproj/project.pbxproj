@@ -53,6 +53,7 @@
 		19E068A72793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A82793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
 		19E068A92793D65100E52895 /* BookQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E068A62793D65100E52895 /* BookQuotesView.swift */; };
+		19F21E81287F4C5F00F122C5 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F21E80287F4C5F00F122C5 /* BookCell.swift */; };
 		7C5D975B2840048A002AB88D /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 7C5D975A2840048A002AB88D /* AlertToast */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		19C4BA4627F665FF006618EF /* CameraLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLauncher.swift; sourceTree = "<group>"; };
 		19C9882C27E6A84E002C6EAE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		19E068A62793D65100E52895 /* BookQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQuotesView.swift; sourceTree = "<group>"; };
+		19F21E80287F4C5F00F122C5 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				19E068A62793D65100E52895 /* BookQuotesView.swift */,
 				19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */,
 				19C4BA4427EE55DE006618EF /* BookSelectionView.swift */,
+				19F21E80287F4C5F00F122C5 /* BookCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				1938C2A3284528C900683BA1 /* StorageManager.swift in Sources */,
 				19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */,
 				1944ED4E278103AE00EF69B2 /* BookView.swift in Sources */,
+				19F21E81287F4C5F00F122C5 /* BookCell.swift in Sources */,
 				1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */,
 				19C4BA4527EE55DE006618EF /* BookSelectionView.swift in Sources */,
 				19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */,
