@@ -8,33 +8,52 @@
 import SwiftUI
 
 struct BookSelectionView: View {
+    
+    var body: some View {
+        // Insterad of loading the books from the demo library, these should instead load from local storage
+        // IF no books are in library, then displays search page where user can add book
+        // TODO: Make sure captured quote is added to book once they select book from search results
+        ScrollableLibraryView()
+    }
+    
+}
+
+struct BookSelectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        BookSelectionView()
+    }
+}
+
+struct ScrollableLibraryView: View {
     @EnvironmentObject var store: BookStore
     @EnvironmentObject var capturedQuote: CapturedQuote
     @EnvironmentObject var cameraLauncher: CameraLauncher
     @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteView(text: "")])
     
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
-                ForEach(store.books) { book in
-                    ScrollableBook(book: book)
-                    // TODO: Consider using id here instead
-                        .background(book.title == selectedBook.title ? .mint : .clear)
-                        .onTapGesture {
-                            print(book.title)
-                            selectedBook = book
-                        }
-                }
-            }.frame(maxHeight: 300)
-        }
-        .background(.gray)
-        
         VStack {
-            Text("Book selected: \(selectedBook.title)")
-            Button(action: saveQuoteToSelectedBook) {
-                Text("Save")
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(store.books) { book in
+                        ScrollableBook(book: book)
+                        // TODO: Consider using id here instead
+                            .background(book.title == selectedBook.title ? .mint : .clear)
+                            .onTapGesture {
+                                print(book.title)
+                                selectedBook = book
+                            }
+                    }
+                }.frame(maxHeight: 300)
             }
-            .opacity(selectedBook.title.isEmpty ? 0.0 : 1.0)
+            .background(.gray)
+            
+            VStack {
+                Text("Book selected: \(selectedBook.title)")
+                Button(action: saveQuoteToSelectedBook) {
+                    Text("Save")
+                }
+                .opacity(selectedBook.title.isEmpty ? 0.0 : 1.0)
+            }
         }
     }
     
@@ -51,12 +70,6 @@ struct BookSelectionView: View {
         }
         cameraLauncher.didFinishPickingImage = false
         cameraLauncher.didSaveQuote = true
-    }
-}
-
-struct BookSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookSelectionView()
     }
 }
 
