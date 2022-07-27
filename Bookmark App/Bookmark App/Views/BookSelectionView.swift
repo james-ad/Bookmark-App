@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct BookSelectionView: View {
+    @State private var libraryIsEmpty = true
+    @State private var shouldShowLibrary = false
     
     var body: some View {
         // Insterad of loading the books from the demo library, these should instead load from local storage
         // IF no books are in library, then displays search page where user can add book
         // TODO: Make sure captured quote is added to book once they select book from search results
+        BookSearch()
         ScrollableLibraryView()
+            .hidden()
     }
     
 }

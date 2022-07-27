@@ -28,6 +28,13 @@ struct Bookmark_App: App {
     var body: some Scene {
         WindowGroup {
             TabView {
+                BookSelectionView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "pencil.circle")
+                            Text("Test")
+                        }
+                    }
                 MainView(delegate: QuoteCaptureViewController())
                     .tabItem {
                         VStack {
