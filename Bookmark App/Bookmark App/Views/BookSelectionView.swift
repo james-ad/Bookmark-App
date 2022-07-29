@@ -9,15 +9,14 @@ import SwiftUI
 
 struct BookSelectionView: View {
     @State private var libraryIsEmpty = true
-    @State private var shouldShowLibrary = false
     
     var body: some View {
         // Insterad of loading the books from the demo library, these should instead load from local storage
         // IF no books are in library, then displays search page where user can add book
         // TODO: Make sure captured quote is added to book once they select book from search results
-        BookSearch()
+//        BookSearch()
         ScrollableLibraryView()
-            .hidden()
+//            .hidden()
     }
     
 }
@@ -29,9 +28,11 @@ struct BookSelectionView_Previews: PreviewProvider {
 }
 
 struct ScrollableLibraryView: View {
+    @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @EnvironmentObject var store: BookStore
     @EnvironmentObject var capturedQuote: CapturedQuote
     @EnvironmentObject var cameraLauncher: CameraLauncher
+    @State var shouldPerformSearch: Bool = false
     @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteView(text: "")])
     
     var body: some View {
@@ -52,7 +53,15 @@ struct ScrollableLibraryView: View {
             .background(.gray)
             
             VStack {
-                Text("Book selected: \(selectedBook.title)")
+                library.isEmpty ? Text("No books in library") : Text("Book selected: \(selectedBook.title)")
+                Button(action: {
+                    self.shouldPerformSearch.toggle()
+                }) {
+                    Text("Add new book")
+                }.sheet(isPresented: $shouldPerformSearch) {
+                    BookSearch()
+                }
+                
                 Button(action: saveQuoteToSelectedBook) {
                     Text("Save")
                 }
@@ -75,11 +84,41 @@ struct ScrollableLibraryView: View {
         cameraLauncher.didFinishPickingImage = false
         cameraLauncher.didSaveQuote = true
     }
+    
 }
+
+//struct ScrollableBook: View {
+//    var book: BookView
+//
+//    var body: some View {
+//        VStack {
+//            AsyncImage(url: URL(string: book.imageName),
+//                       content: { image in
+//                image.resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .cornerRadius(2)
+//                    },
+//                       placeholder: {
+//                ProgressView()
+//            })
+//            Spacer()
+//            VStack(alignment: .center) {
+//                Text(book.title)
+//                Text(book.author)
+//                    .font(.subheadline)
+//                    .foregroundColor(.secondary)
+//            }
+//            Spacer()
+//            Spacer()
+//        }
+//        .background(.clear)
+//        .padding(15)
+//    }
+//}
 
 struct ScrollableBook: View {
     var book: BookView
-    
+
     var body: some View {
         VStack {
             Image(book.imageName)
