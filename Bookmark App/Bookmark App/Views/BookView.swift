@@ -11,7 +11,7 @@ import UIKit
 public struct BookView: Identifiable {
     public var id = UUID()
     public var author: String = ""
-    public var imageName: String = "book"
+    public var imageName: String = ""
     public var title: String = ""
     public var quotes: [QuoteView] = []
 }

@@ -39,18 +39,30 @@ struct ScrollableLibraryView: View {
         VStack {
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(store.books) { book in
-                        ScrollableBook(book: book)
-                        // TODO: Consider using id here instead
-                            .background(book.title == selectedBook.title ? .mint : .clear)
-                            .onTapGesture {
-                                print(book.title)
-                                selectedBook = book
-                            }
+                    if library.isEmpty {
+                        Spacer()
+                        Text("Library is empty. Please add a book to save the quote.")
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Spacer()
+                    } else {
+                        ForEach(library) { book in
+                            ScrollableBook(book: bookViewFromBook(book: book))
+                            // TODO: Consider using id here instead
+                                .background(book.title == selectedBook.title ? .mint : .clear)
+                                .onTapGesture {
+                                    print(book.title!)
+                                    selectedBook = bookViewFromBook(book: book)
+                                }
+                        }
                     }
                 }.frame(maxHeight: 300)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.leading)
             }
             .background(.gray)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
             
             VStack {
                 library.isEmpty ? Text("No books in library") : Text("Book selected: \(selectedBook.title)")
@@ -87,44 +99,20 @@ struct ScrollableLibraryView: View {
     
 }
 
-//struct ScrollableBook: View {
-//    var book: BookView
-//
-//    var body: some View {
-//        VStack {
-//            AsyncImage(url: URL(string: book.imageName),
-//                       content: { image in
-//                image.resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .cornerRadius(2)
-//                    },
-//                       placeholder: {
-//                ProgressView()
-//            })
-//            Spacer()
-//            VStack(alignment: .center) {
-//                Text(book.title)
-//                Text(book.author)
-//                    .font(.subheadline)
-//                    .foregroundColor(.secondary)
-//            }
-//            Spacer()
-//            Spacer()
-//        }
-//        .background(.clear)
-//        .padding(15)
-//    }
-//}
-
 struct ScrollableBook: View {
     var book: BookView
 
     var body: some View {
         VStack {
-            Image(book.imageName)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(3)
+            AsyncImage(url: URL(string: book.imageName),
+                       content: { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(2)
+                    },
+                       placeholder: {
+                ProgressView()
+            })
             Spacer()
             VStack(alignment: .center) {
                 Text(book.title)
@@ -139,3 +127,27 @@ struct ScrollableBook: View {
         .padding(15)
     }
 }
+
+//struct ScrollableBook: View {
+//    var book: BookView
+//
+//    var body: some View {
+//        VStack {
+//            Image(book.imageName)
+//                .resizable()
+//                .scaledToFit()
+//                .cornerRadius(3)
+//            Spacer()
+//            VStack(alignment: .center) {
+//                Text(book.title)
+//                Text(book.author)
+//                    .font(.subheadline)
+//                    .foregroundColor(.secondary)
+//            }
+//            Spacer()
+//            Spacer()
+//        }
+//        .background(.clear)
+//        .padding(15)
+//    }
+//}
