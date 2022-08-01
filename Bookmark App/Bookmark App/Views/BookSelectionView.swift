@@ -11,12 +11,8 @@ struct BookSelectionView: View {
     @State private var libraryIsEmpty = true
     
     var body: some View {
-        // Insterad of loading the books from the demo library, these should instead load from local storage
-        // IF no books are in library, then displays search page where user can add book
         // TODO: Make sure captured quote is added to book once they select book from search results
-//        BookSearch()
         ScrollableLibraryView()
-//            .hidden()
     }
     
 }
@@ -29,6 +25,7 @@ struct BookSelectionView_Previews: PreviewProvider {
 
 struct ScrollableLibraryView: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
+    @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var store: BookStore
     @EnvironmentObject var capturedQuote: CapturedQuote
     @EnvironmentObject var cameraLauncher: CameraLauncher
@@ -84,13 +81,12 @@ struct ScrollableLibraryView: View {
     
     func saveQuoteToSelectedBook() {
         // TODO: This can probably be made more efficient with a dictionary or a tree
-        for (index, var book) in store.books.enumerated() {
-            
+        for book in library {
             if book.id == selectedBook.id {
-                print("BOOCH: \(book.quotes)")
-                book.quotes.append(QuoteView(text: capturedQuote.text))
-                print("BOOCH: \(book.quotes)")
-                store.books[index] = book
+                let quote = Quote(context: moc)
+                quote.text = capturedQuote.text
+                book.quotes = book.quotes?.adding(quote) as? NSSet
+                try? moc.save()
             }
         }
         cameraLauncher.didFinishPickingImage = false

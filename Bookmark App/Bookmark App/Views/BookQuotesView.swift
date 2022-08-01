@@ -65,8 +65,8 @@ struct AsyncBookQuotesView: View {
             .cornerRadius(3)
             
             List {
-                ForEach(bookView.quotes) { quote in
-                    Text(quote.text)
+                ForEach(Array(library[0].quotes as! Set<Quote>), id: \.self) { quote in
+                    Text(quote.text ?? "No text")
                 }
             }
             
