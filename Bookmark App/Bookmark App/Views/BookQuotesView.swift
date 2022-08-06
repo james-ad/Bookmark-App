@@ -65,12 +65,21 @@ struct AsyncBookQuotesView: View {
             .cornerRadius(3)
             
             List {
+                if !library.isEmpty {
                 ForEach(Array(library[0].quotes as! Set<Quote>), id: \.self) { quote in
                     Text(quote.text ?? "No text")
+                }
                 }
             }
             
             Button("Add book to library", action: {
+                // First check to make sure book doesn't already exist in library so as not to create duplicate
+                let searchResultsFromLibrary = library.filter { $0.title == bookView.title }
+                guard searchResultsFromLibrary.isEmpty else {
+                    presentationMode.wrappedValue.dismiss()
+                    return
+                }
+                
                 let book = Book(context: moc)
                 book.id = bookView.id
                 book.author = bookView.author
