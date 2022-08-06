@@ -43,10 +43,15 @@ struct LibraryView: View {
         }
     }
     
-    private func deleteBook(offset: IndexSet) {
+    private func deleteBook(at offsets: IndexSet) {
         print("Book delted")
         withAnimation {
-            store.books.remove(atOffsets: offset)
+            for offset in offsets {
+                let book = library[offset]
+                moc.delete(book)
+            }
+            
+            try? moc.save()
         }
     }
     
