@@ -21,16 +21,16 @@ struct LibraryView: View {
                 ForEach(library) { book in
                     AsyncBookCell(bookView: bookViewFromBook(book: book))
                 }
-                .onMove(perform: moveBook)
                 .onDelete(perform: deleteBook)
+//                .onMove(perform: moveBook)
             }
             .navigationTitle("Library")
             .toolbar {
                 HStack {
-                EditButton()
-                    NavigationLink(destination: AddBookView()) {
-                        Image(systemName: "plus")
-                    }
+                    EditButton().moveDisabled(true)
+//                    NavigationLink(destination: AddBookView()) {
+//                        Image(systemName: "plus")
+//                    }
                 }
             }
         }
@@ -59,9 +59,9 @@ struct LibraryView: View {
         print("Book added")
         withAnimation {
             store.books.append(BookView(author: "James Dunn",
-                                    imageName: "book",
-                                    title: "Title",
-                                    quotes: [QuoteView(text: "Quote", pageNumber: 1, notes: nil)]))
+                                        imageName: "book",
+                                        title: "Title",
+                                        quotes: [QuoteView(text: "Quote", pageNumber: 1, notes: nil)]))
         }
         
         
