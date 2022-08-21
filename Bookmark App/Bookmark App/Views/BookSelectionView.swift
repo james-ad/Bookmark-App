@@ -14,7 +14,6 @@ struct BookSelectionView: View {
         // TODO: Make sure captured quote is added to book once they select book from search results
         ScrollableLibraryView()
     }
-    
 }
 
 struct BookSelectionView_Previews: PreviewProvider {

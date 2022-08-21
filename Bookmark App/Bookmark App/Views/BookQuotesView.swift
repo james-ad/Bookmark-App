@@ -72,10 +72,11 @@ struct AsyncBookQuotesView: View {
                 }
             }
             
-            Button("Add book to library", action: {
+            let bookAlreadyInLibrary = !library.filter { $0.title == bookView.title }.isEmpty
+            let buttonLabel = bookAlreadyInLibrary ? "Add quote" : "Add book to library"
+            Button(buttonLabel, action: {
                 // First check to make sure book doesn't already exist in library so as not to create duplicate
-                let searchResultsFromLibrary = library.filter { $0.title == bookView.title }
-                guard searchResultsFromLibrary.isEmpty else {
+                guard !bookAlreadyInLibrary else {
                     presentationMode.wrappedValue.dismiss()
                     return
                 }
