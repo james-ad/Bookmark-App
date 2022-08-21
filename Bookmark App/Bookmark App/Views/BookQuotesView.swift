@@ -66,9 +66,9 @@ struct AsyncBookQuotesView: View {
             
             List {
                 if !library.isEmpty {
-                ForEach(Array(library[0].quotes as! Set<Quote>), id: \.self) { quote in
-                    Text(quote.text ?? "No text")
-                }
+                    ForEach(Array(library[0].quotes as! Set<Quote>), id: \.self) { quote in
+                        Text(quote.text ?? "No text")
+                    }
                 }
             }
             
