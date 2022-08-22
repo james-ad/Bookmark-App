@@ -22,7 +22,10 @@ struct MainView: View {
             VStack(alignment: .center, spacing: 50, content: {
                 Spacer()
                 Text("Bookmark")
-                    .font(.system(size: 75))
+                    .font(.system(size: 60))
+                    .padding()
+                    .shadow(color: .gray, radius: 4, x: 0, y: 5)
+                    .offset(y: 75)
                 Spacer()
                 Spacer()
                 Spacer()
@@ -30,6 +33,7 @@ struct MainView: View {
                     .sheet(isPresented: $shouldOpenUserCamera) {
                         ImagePicker(selectedImage: self.$image, sourceType: .camera, delegate: self)
                     }
+                    .offset(y: -50)
                 Spacer()
             })
             .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
@@ -70,14 +74,17 @@ struct CaptureButton: View {
     var body: some View {
         Group {
             Button(action: handleTap) {
-                Text("Capture Photo")
-                    .font(.largeTitle)
+                Image("camera_icon")
             }
-            .frame(maxWidth: 300, maxHeight: 300)
+                .border(.black, width: 5)
+            .cornerRadius(50)
+            .padding()
         }
-        .background(.blue)
-        .foregroundColor(.white)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.blue, .mint, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
         .cornerRadius(200)
+        .shadow(color: .black, radius: 6, x: 1, y: 4)
         .onTapGesture {
             handleTap()
         }
