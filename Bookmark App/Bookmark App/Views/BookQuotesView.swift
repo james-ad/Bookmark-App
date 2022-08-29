@@ -42,6 +42,9 @@ struct AsyncBookQuotesView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     var bookView: BookView
+    var currentBook: Book? {
+        library.filter { $0.title == bookView.title }.first
+    }
     
     var body: some View {
         VStack {
@@ -66,7 +69,7 @@ struct AsyncBookQuotesView: View {
             
             List {
                 if !library.isEmpty,
-                   let currentBook = library.filter { $0.title == bookView.title }.first {
+                   let currentBook = currentBook {
                        ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
                            if let quoteText = quote.text {
                                let displayedQuote = quoteText.count < 100 ?
@@ -76,6 +79,7 @@ struct AsyncBookQuotesView: View {
                                    .padding()
                            }
                        }
+                       .onDelete(perform: deleteBook)
                    }
             }
             
@@ -101,6 +105,19 @@ struct AsyncBookQuotesView: View {
         }
         Spacer()
         Spacer()
+    }
+    
+    private func deleteBook(at offsets: IndexSet) {
+        guard let currentBook = currentBook, let quotes = currentBook.quotes else { return }
+        print("Book delted")
+        withAnimation {
+        }
+        for offset in offsets {
+            let quote = quotes.reversed()[quotes.reversed().index(0, offsetBy: offset)]
+            moc.delete(quote as! Quote)
+        }
+        
+        try? moc.save()
     }
 }
 
