@@ -10,7 +10,8 @@ import SwiftUI
 struct QuoteView: View {
     @State var text: String
     var body: some View {
-        Text(text)
+        TextEditor(text: $text)
+            .padding()
     }
 }
 
