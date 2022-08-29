@@ -8,10 +8,10 @@
 import Foundation
 
 func bookViewFromBook(book: Book) -> BookView {
-    var quotes: [QuoteView] = []
+    var quotes: [QuoteModel] = []
     book.quotes?.forEach { quote in
         let q = quote as? Quote
-        let qv = QuoteView(id: q?.id ?? UUID(), text: q?.text ?? "", pageNumber: Int(q?.pageNumber ?? 0), notes: nil)
+        let qv = QuoteModel(id: q?.id ?? UUID(), text: q?.text ?? "", pageNumber: Int(q?.pageNumber ?? 0), notes: nil)
         quotes.append(qv)
     }
     return BookView(id: book.id ?? UUID(),

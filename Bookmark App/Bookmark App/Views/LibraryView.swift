@@ -61,7 +61,7 @@ struct LibraryView: View {
             store.books.append(BookView(author: "James Dunn",
                                         imageName: "book",
                                         title: "Title",
-                                        quotes: [QuoteView(text: "Quote", pageNumber: 1, notes: nil)]))
+                                        quotes: [QuoteModel(text: "Quote", pageNumber: 1, notes: nil)]))
         }
         
         

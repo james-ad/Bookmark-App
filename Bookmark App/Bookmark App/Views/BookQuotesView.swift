@@ -10,7 +10,7 @@ import SwiftUI
 struct BookQuotesView: View {
     @State var image: String
     @State var title: String
-    @State var quotes: [QuoteView]
+    @State var quotes: [QuoteModel]
     
     var body: some View {
         VStack {
@@ -66,11 +66,17 @@ struct AsyncBookQuotesView: View {
             
             List {
                 if !library.isEmpty,
-                    let currentBook = library.filter { $0.title == bookView.title }.first {
-                    ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
-                        Text(quote.text ?? "No text")
-                    }
-                }
+                   let currentBook = library.filter { $0.title == bookView.title }.first {
+                       ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
+                           if let quoteText = quote.text {
+                               let displayedQuote = quoteText.count < 100 ?
+                               quoteText :
+                               quoteText.prefix(upTo: quoteText.index(quoteText.startIndex, offsetBy: 100)) + "..."
+                               NavigationLink(displayedQuote, destination: QuoteView(text: quoteText))
+                                   .padding()
+                           }
+                       }
+                   }
             }
             
             let bookAlreadyInLibrary = !library.filter { $0.title == bookView.title }.isEmpty

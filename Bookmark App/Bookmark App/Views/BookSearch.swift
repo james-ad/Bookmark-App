@@ -19,7 +19,7 @@ struct BookSearch: View {
                     Spacer()
                     TextField("Search for title or author", text: $searchText)
                         .padding()
-                        .border(.black, width: 2)
+                        .border(.gray, width: 2)
                         .onChange(of: searchText) { newText in
                             performNewSearch(withText: newText)
                         }
@@ -46,7 +46,7 @@ struct BookSearch: View {
                 let bookView = BookView(author: book.volumeInfo.authors[0],
                                         imageName: secureImageURL,
                                         title: book.volumeInfo.title,
-                                        quotes: [QuoteView(text: "Hello, World")])
+                                        quotes: [QuoteModel(text: "Hello, World")])
                 newResults.append(bookView)
             }
             searchResults = newResults

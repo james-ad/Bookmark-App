@@ -2,23 +2,20 @@
 //  QuoteView.swift
 //  Bookmark App
 //
-//  Created by James Dunn on 1/1/22.
+//  Created by James Dunn on 8/28/22.
 //
 
-import Foundation
+import SwiftUI
 
-public struct QuoteView: Identifiable, Hashable {
-    public var id = UUID()
-    var text: String
-    var pageNumber: Int?
-    var notes: String?
+struct QuoteView: View {
+    @State var text: String
+    var body: some View {
+        Text(text)
+    }
 }
 
-public let testQuotes = [
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 1, notes: nil),
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 2, notes: nil),
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 3, notes: nil),
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 4, notes: nil),
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 5, notes: nil),
-    QuoteView(text: "FJAIOFJDIAFJD SKFJDOIAFJ  FIDJFIAOJFID FJFDAIOFJDIAFJI FIDAOF JIF.", pageNumber: 6, notes: nil)
-]
+struct QuoteView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuoteView(text: "Hello, Waldo")
+    }
+}

@@ -24,7 +24,6 @@ struct MainView: View {
                 Text("Bookmark")
                     .font(.system(size: 60))
                     .padding()
-                    .shadow(color: .gray, radius: 4, x: 0, y: 5)
                     .offset(y: 75)
                 Spacer()
                 Spacer()

@@ -29,7 +29,7 @@ struct ScrollableLibraryView: View {
     @EnvironmentObject var capturedQuote: CapturedQuote
     @EnvironmentObject var cameraLauncher: CameraLauncher
     @State var shouldPerformSearch: Bool = false
-    @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteView(text: "")])
+    @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteModel(text: "")])
     
     var body: some View {
         VStack {

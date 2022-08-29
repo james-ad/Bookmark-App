@@ -16,6 +16,7 @@
 		190C07B1276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */; };
 		190DF5052842EEB0009F5ABF /* BookSearchNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DF5042842EEB0009F5ABF /* BookSearchNetworkClient.swift */; };
 		190DF50728446045009F5ABF /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
+		191D68E528BC5BC80007EA62 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D68E428BC5BC80007EA62 /* QuoteView.swift */; };
 		1938C29D2844656300683BA1 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1938C2A3284528C900683BA1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938C2A2284528C900683BA1 /* StorageManager.swift */; };
 		1944ED46277D07E400EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
@@ -23,7 +24,7 @@
 		1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED45277D07E300EF69B2 /* MainView.swift */; };
 		1944ED4C2780FE7900EF69B2 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4B2780FE7900EF69B2 /* BookStore.swift */; };
 		1944ED4E278103AE00EF69B2 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
-		1944ED502781043200EF69B2 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
+		1944ED502781043200EF69B2 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteModel.swift */; };
 		1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED532781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
 		1944ED542781095E00EF69B2 /* EditQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED512781095D00EF69B2 /* EditQuoteView.swift */; };
@@ -33,8 +34,8 @@
 		1962B3752783C46D0094E845 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1962B3742783C46D0094E845 /* LibraryView.swift */; };
 		1962B3782783CB1A0094E845 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
 		1962B3792783CB1A0094E845 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4D278103AE00EF69B2 /* BookView.swift */; };
-		1962B37A2783CB370094E845 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
-		1962B37B2783CB380094E845 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteView.swift */; };
+		1962B37A2783CB370094E845 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteModel.swift */; };
+		1962B37B2783CB380094E845 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944ED4F2781043200EF69B2 /* QuoteModel.swift */; };
 		19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
 		19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19669463279918DD00EFC4D8 /* AddBookView.swift */; };
@@ -87,11 +88,12 @@
 		190C07AE276DA7F0000E820D /* Bookmark_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITests.swift; sourceTree = "<group>"; };
 		190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		190DF5042842EEB0009F5ABF /* BookSearchNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchNetworkClient.swift; sourceTree = "<group>"; };
+		191D68E428BC5BC80007EA62 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		1938C2A2284528C900683BA1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		1944ED45277D07E300EF69B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1944ED4B2780FE7900EF69B2 /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 		1944ED4D278103AE00EF69B2 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
-		1944ED4F2781043200EF69B2 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		1944ED4F2781043200EF69B2 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		1944ED512781095D00EF69B2 /* EditQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteView.swift; sourceTree = "<group>"; };
 		196011782790F926005DC202 /* BookSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearch.swift; sourceTree = "<group>"; };
 		1962B3742783C46D0094E845 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -231,7 +233,7 @@
 			children = (
 				1944ED45277D07E300EF69B2 /* MainView.swift */,
 				1944ED4D278103AE00EF69B2 /* BookView.swift */,
-				1944ED4F2781043200EF69B2 /* QuoteView.swift */,
+				1944ED4F2781043200EF69B2 /* QuoteModel.swift */,
 				1944ED512781095D00EF69B2 /* EditQuoteView.swift */,
 				1962B3742783C46D0094E845 /* LibraryView.swift */,
 				19669463279918DD00EFC4D8 /* AddBookView.swift */,
@@ -240,6 +242,7 @@
 				19C4BA4027EC20CB006618EF /* CapturedQuoteView.swift */,
 				19C4BA4427EE55DE006618EF /* BookSelectionView.swift */,
 				19F21E80287F4C5F00F122C5 /* BookCell.swift */,
+				191D68E428BC5BC80007EA62 /* QuoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,11 +395,12 @@
 				19669464279918DD00EFC4D8 /* AddBookView.swift in Sources */,
 				198A58072851A8330081D6FF /* Library+CoreDataClass.swift in Sources */,
 				198A58092851A8330081D6FF /* Book+CoreDataClass.swift in Sources */,
+				191D68E528BC5BC80007EA62 /* QuoteView.swift in Sources */,
 				19C4BA4727F665FF006618EF /* CameraLauncher.swift in Sources */,
 				1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */,
 				198A580A2851A8330081D6FF /* Book+CoreDataProperties.swift in Sources */,
 				19C4BA4327EE002C006618EF /* CapturedQuote.swift in Sources */,
-				1944ED502781043200EF69B2 /* QuoteView.swift in Sources */,
+				1944ED502781043200EF69B2 /* QuoteModel.swift in Sources */,
 				190C078F276DA7ED000E820D /* Bookmark_App.swift in Sources */,
 				1944ED46277D07E400EF69B2 /* MainView.swift in Sources */,
 				198A580B2851A8330081D6FF /* Quote+CoreDataClass.swift in Sources */,
@@ -421,7 +425,7 @@
 				1962B3782783CB1A0094E845 /* BookView.swift in Sources */,
 				1938C29D2844656300683BA1 /* LibraryView.swift in Sources */,
 				1960117A2790F926005DC202 /* BookSearch.swift in Sources */,
-				1962B37A2783CB370094E845 /* QuoteView.swift in Sources */,
+				1962B37A2783CB370094E845 /* QuoteModel.swift in Sources */,
 				1944ED47277D07EB00EF69B2 /* MainView.swift in Sources */,
 				19669465279918DD00EFC4D8 /* AddBookView.swift in Sources */,
 			);
@@ -437,7 +441,7 @@
 				1962B3792783CB1A0094E845 /* BookView.swift in Sources */,
 				1944ED48277D07EC00EF69B2 /* MainView.swift in Sources */,
 				19669466279918DD00EFC4D8 /* AddBookView.swift in Sources */,
-				1962B37B2783CB380094E845 /* QuoteView.swift in Sources */,
+				1962B37B2783CB380094E845 /* QuoteModel.swift in Sources */,
 				19E068A92793D65100E52895 /* BookQuotesView.swift in Sources */,
 				190DF50728446045009F5ABF /* LibraryView.swift in Sources */,
 				190C07AF276DA7F0000E820D /* Bookmark_AppUITests.swift in Sources */,
