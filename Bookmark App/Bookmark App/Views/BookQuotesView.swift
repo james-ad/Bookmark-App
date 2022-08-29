@@ -65,8 +65,9 @@ struct AsyncBookQuotesView: View {
             .cornerRadius(3)
             
             List {
-                if !library.isEmpty {
-                    ForEach(Array(library[0].quotes as! Set<Quote>), id: \.self) { quote in
+                if !library.isEmpty,
+                    let currentBook = library.filter { $0.title == bookView.title }.first {
+                    ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
                         Text(quote.text ?? "No text")
                     }
                 }
