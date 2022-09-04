@@ -30,7 +30,7 @@ struct MainView: View {
                 Spacer()
                 CaptureButton(delegate: self)
                     .sheet(isPresented: $shouldOpenUserCamera) {
-                        ImagePicker(selectedImage: self.$image, sourceType: .camera, delegate: self)
+                        ImagePicker(selectedImage: self.$image, sourceType: .camera)
                     }
                     .offset(y: -50)
                 Spacer()

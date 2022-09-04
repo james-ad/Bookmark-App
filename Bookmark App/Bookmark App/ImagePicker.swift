@@ -17,7 +17,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     @EnvironmentObject var cameraLauncher: CameraLauncher
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    var delegate: MainView? = nil
  
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
  

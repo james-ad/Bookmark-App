@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct BookQuotesView: View {
     @State var image: String
@@ -41,6 +42,9 @@ struct AsyncBookQuotesView: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var cameraLauncher: CameraLauncher
+    @State private var quoteShouldBeAdded: Bool = false
+    @State private var image = UIImage()
     var bookView: BookView
     var currentBook: Book? {
         library.filter { $0.title == bookView.title }.first
@@ -88,7 +92,7 @@ struct AsyncBookQuotesView: View {
             Button(buttonLabel, action: {
                 // First check to make sure book doesn't already exist in library so as not to create duplicate
                 guard !bookAlreadyInLibrary else {
-                    presentationMode.wrappedValue.dismiss()
+                    quoteShouldBeAdded = true
                     return
                 }
                 
@@ -102,7 +106,23 @@ struct AsyncBookQuotesView: View {
                 presentationMode.wrappedValue.dismiss()
             })
             .padding()
+            .sheet(isPresented: $quoteShouldBeAdded) {
+                ImagePicker(selectedImage: self.$image, sourceType: .camera)
+            }
         }
+        .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
+            CapturedQuoteView()
+        }
+        .toast(isPresenting: $cameraLauncher.didSaveQuote,
+               duration: 2,
+               tapToDismiss: true,
+               offsetY: -200,
+               alert: {
+            AlertToast(displayMode: .banner(.pop),
+                       type: .complete(.green),
+                       title: "Quote saved!",
+                       style: .style(backgroundColor: .green, titleColor: .white, subTitleColor: nil, titleFont: nil, subTitleFont: nil))
+        })
         Spacer()
         Spacer()
     }
