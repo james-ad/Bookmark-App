@@ -88,27 +88,32 @@ struct AsyncBookQuotesView: View {
             }
             
             let bookAlreadyInLibrary = !library.filter { $0.title == bookView.title }.isEmpty
-            let buttonLabel = bookAlreadyInLibrary ? "Add quote" : "Add book to library"
-            Button(buttonLabel, action: {
-                // First check to make sure book doesn't already exist in library so as not to create duplicate
-                guard !bookAlreadyInLibrary else {
-                    quoteShouldBeAdded = true
-                    return
-                }
-                
-                let book = Book(context: moc)
-                book.id = bookView.id
-                book.author = bookView.author
-                book.title = bookView.title
-                book.imageURL = bookView.imageName
-                try? moc.save()
-                print("Book was successfully added to Core Data")
-                presentationMode.wrappedValue.dismiss()
-            })
-            .padding()
-            .sheet(isPresented: $quoteShouldBeAdded) {
-                ImagePicker(selectedImage: self.$image, sourceType: .camera)
-            }
+            
+            // TODO: After MVP, change this so that a quote can be added from the book quotes view
+            //            let buttonLabel = bookAlreadyInLibrary ? "Add quote" : "Add book to library"
+            if !bookAlreadyInLibrary {
+                let buttonLabel = "Add book to library"
+                Button(buttonLabel, action: {
+                    // First check to make sure book doesn't already exist in library so as not to create duplicate
+                    guard !bookAlreadyInLibrary else {
+                        // TODO: Uncomment code after MVP
+                        //                    quoteShouldBeAdded = true
+                        return
+                    }
+                    
+                    let book = Book(context: moc)
+                    book.id = bookView.id
+                    book.author = bookView.author
+                    book.title = bookView.title
+                    book.imageURL = bookView.imageName
+                    try? moc.save()
+                    print("Book was successfully added to Core Data")
+                    presentationMode.wrappedValue.dismiss()
+                })
+                .padding()
+                .sheet(isPresented: $quoteShouldBeAdded) {
+                    ImagePicker(selectedImage: self.$image, sourceType: .camera)
+                }}
         }
         .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
             CapturedQuoteView()
