@@ -75,15 +75,14 @@ struct CaptureButton: View {
             Button(action: handleTap) {
                 Image("camera_icon")
             }
-                .border(.black, width: 5)
             .cornerRadius(50)
             .padding()
         }
         .background(
-            LinearGradient(gradient: Gradient(colors: [.blue, .mint, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.cyan, .blue]), startPoint: .top, endPoint: .bottom)
         )
         .cornerRadius(200)
-        .shadow(color: .black, radius: 6, x: 1, y: 4)
+        .shadow(color: .primary, radius: 0, x: 0, y: 2.5)
         .onTapGesture {
             handleTap()
         }
