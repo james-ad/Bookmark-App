@@ -17,14 +17,13 @@ struct BookSearch: View {
             VStack {
                 HStack {
                     Spacer()
-//                    TextField("Search for title or author", text: $searchText)
                         .searchable(text: $searchText)
-//                        .padding()
-//                        .border(.gray, width: 2)
                         .onChange(of: searchText) { newText in
+                            if searchText.isEmpty {
+                                searchResults = []
+                            }
                             performNewSearch(withText: newText)
                         }
-//                    Spacer()
                 }
                 
                 List {
