@@ -45,7 +45,7 @@ struct ScrollableLibraryView: View {
                         ForEach(library) { book in
                             ScrollableBook(book: bookViewFromBook(book: book))
                             // TODO: Consider using id here instead
-                                .background(book.title == selectedBook.title ? .mint : .clear)
+                                .background(book.title == selectedBook.title ? .gray : .black)
                                 .onTapGesture {
                                     print(book.title!)
                                     selectedBook = bookViewFromBook(book: book)
@@ -56,12 +56,28 @@ struct ScrollableLibraryView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .multilineTextAlignment(.leading)
             }
-            .background(.gray)
+            .background(.black)
+            .border(.gray, width: 1)
             .frame(maxWidth: .infinity, alignment: .leading)
             .multilineTextAlignment(.leading)
             
             VStack {
-                library.isEmpty ? Text("No books in library") : Text("Book selected: \(selectedBook.title)")
+                let scrollText = library.isEmpty ? "No books in library" : "Book selected: \(selectedBook.title)"
+                
+                Text(scrollText)
+                    .font(.title3)
+                    .padding()
+                
+                Button(action: saveQuoteToSelectedBook) {
+                    Text("Save")
+                }
+                .buttonStyle(.borderedProminent)
+                .font(.title3)
+                .opacity(selectedBook.title.isEmpty ? 0.0 : 1.0)
+            }
+            
+            VStack {
+                Text("Book not in your library yet?")
                 Button(action: {
                     self.shouldPerformSearch.toggle()
                 }) {
@@ -69,12 +85,9 @@ struct ScrollableLibraryView: View {
                 }.sheet(isPresented: $shouldPerformSearch) {
                     BookSearch()
                 }
-                
-                Button(action: saveQuoteToSelectedBook) {
-                    Text("Save")
-                }
-                .opacity(selectedBook.title.isEmpty ? 0.0 : 1.0)
+                .buttonStyle(.bordered)
             }
+            .offset(y: 60)
         }
     }
     
