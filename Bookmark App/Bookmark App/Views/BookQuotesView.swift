@@ -68,9 +68,13 @@ struct AsyncBookQuotesView: View {
                     .font(.title2)
             }
             .padding()
-            .border(.gray, width: 5)
+            .border(.gray, width: 2)
             .cornerRadius(3)
-            
+            if let currentBook = currentBook, currentBook.quotes?.count ?? 0 < 1 {
+                    Text("There are no quotes for this book yet.")
+                    .font(.headline)
+                    .offset(y: 10)
+            }
             List {
                 if !library.isEmpty,
                    let currentBook = currentBook {
