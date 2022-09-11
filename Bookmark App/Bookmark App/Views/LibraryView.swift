@@ -17,6 +17,9 @@ struct LibraryView: View {
     //    }
     var body: some View {
         NavigationView {
+            if library.isEmpty {
+                Text("No books currently in library.")
+            } else {
             List {
                 ForEach(library) { book in
                     AsyncBookCell(bookView: bookViewFromBook(book: book))
@@ -32,6 +35,7 @@ struct LibraryView: View {
 //                        Image(systemName: "plus")
 //                    }
                 }
+            }
             }
         }
     }
