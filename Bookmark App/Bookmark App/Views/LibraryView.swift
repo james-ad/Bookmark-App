@@ -20,22 +20,22 @@ struct LibraryView: View {
             if library.isEmpty {
                 Text("No books currently in library.")
             } else {
-            List {
-                ForEach(library) { book in
-                    AsyncBookCell(bookView: bookViewFromBook(book: book))
+                List {
+                    ForEach(library) { book in
+                        AsyncBookCell(bookView: bookViewFromBook(book: book))
+                    }
+                    .onDelete(perform: deleteBook)
+                    //                .onMove(perform: moveBook)
                 }
-                .onDelete(perform: deleteBook)
-//                .onMove(perform: moveBook)
-            }
-            .navigationTitle("Library")
-            .toolbar {
-                HStack {
-                    EditButton().moveDisabled(true)
-//                    NavigationLink(destination: AddBookView()) {
-//                        Image(systemName: "plus")
-//                    }
+                .navigationTitle("Library")
+                .toolbar {
+                    HStack {
+                        EditButton().moveDisabled(true)
+                        //                    NavigationLink(destination: AddBookView()) {
+                        //                        Image(systemName: "plus")
+                        //                    }
+                    }
                 }
-            }
             }
         }
     }

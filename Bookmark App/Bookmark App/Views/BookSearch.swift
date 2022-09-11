@@ -46,7 +46,7 @@ struct BookSearch: View {
                 let bookView = BookView(author: book.volumeInfo.authors[0],
                                         imageName: secureImageURL,
                                         title: book.volumeInfo.title,
-                                        quotes: [QuoteModel(text: "Hello, World")])
+                                        quotes: [QuoteModel(text: "")])
                 newResults.append(bookView)
             }
             searchResults = newResults
