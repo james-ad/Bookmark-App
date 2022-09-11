@@ -77,14 +77,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		190C078B276DA7ED000E820D /* Bookmark App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bookmark App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		190C078B276DA7ED000E820D /* Bookmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C078E276DA7ED000E820D /* Bookmark_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_App.swift; sourceTree = "<group>"; };
 		190C0792276DA7F0000E820D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		190C0795276DA7F0000E820D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		190C079A276DA7F0000E820D /* Bookmark_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmark_App.xcdatamodel; sourceTree = "<group>"; };
-		190C07A0276DA7F0000E820D /* Bookmark AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bookmark AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		190C07A0276DA7F0000E820D /* BookmarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookmarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C07A4276DA7F0000E820D /* Bookmark_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppTests.swift; sourceTree = "<group>"; };
-		190C07AA276DA7F0000E820D /* Bookmark AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bookmark AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		190C07AA276DA7F0000E820D /* BookmarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookmarkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C07AE276DA7F0000E820D /* Bookmark_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITests.swift; sourceTree = "<group>"; };
 		190C07B0276DA7F0000E820D /* Bookmark_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		190DF5042842EEB0009F5ABF /* BookSearchNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchNetworkClient.swift; sourceTree = "<group>"; };
@@ -156,9 +156,9 @@
 		190C078C276DA7ED000E820D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				190C078B276DA7ED000E820D /* Bookmark App.app */,
-				190C07A0276DA7F0000E820D /* Bookmark AppTests.xctest */,
-				190C07AA276DA7F0000E820D /* Bookmark AppUITests.xctest */,
+				190C078B276DA7ED000E820D /* Bookmark.app */,
+				190C07A0276DA7F0000E820D /* BookmarkTests.xctest */,
+				190C07AA276DA7F0000E820D /* BookmarkUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,9 +250,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		190C078A276DA7ED000E820D /* Bookmark App */ = {
+		190C078A276DA7ED000E820D /* Bookmark */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 190C07B4276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark App" */;
+			buildConfigurationList = 190C07B4276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark" */;
 			buildPhases = (
 				190C0787276DA7ED000E820D /* Sources */,
 				190C0788276DA7ED000E820D /* Frameworks */,
@@ -262,17 +262,17 @@
 			);
 			dependencies = (
 			);
-			name = "Bookmark App";
+			name = Bookmark;
 			packageProductDependencies = (
 				7C5D975A2840048A002AB88D /* AlertToast */,
 			);
 			productName = "Bookmark App";
-			productReference = 190C078B276DA7ED000E820D /* Bookmark App.app */;
+			productReference = 190C078B276DA7ED000E820D /* Bookmark.app */;
 			productType = "com.apple.product-type.application";
 		};
-		190C079F276DA7F0000E820D /* Bookmark AppTests */ = {
+		190C079F276DA7F0000E820D /* BookmarkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 190C07B7276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark AppTests" */;
+			buildConfigurationList = 190C07B7276DA7F0000E820D /* Build configuration list for PBXNativeTarget "BookmarkTests" */;
 			buildPhases = (
 				190C079C276DA7F0000E820D /* Sources */,
 				190C079D276DA7F0000E820D /* Frameworks */,
@@ -283,14 +283,14 @@
 			dependencies = (
 				190C07A2276DA7F0000E820D /* PBXTargetDependency */,
 			);
-			name = "Bookmark AppTests";
+			name = BookmarkTests;
 			productName = "Bookmark AppTests";
-			productReference = 190C07A0276DA7F0000E820D /* Bookmark AppTests.xctest */;
+			productReference = 190C07A0276DA7F0000E820D /* BookmarkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		190C07A9276DA7F0000E820D /* Bookmark AppUITests */ = {
+		190C07A9276DA7F0000E820D /* BookmarkUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 190C07BA276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark AppUITests" */;
+			buildConfigurationList = 190C07BA276DA7F0000E820D /* Build configuration list for PBXNativeTarget "BookmarkUITests" */;
 			buildPhases = (
 				190C07A6276DA7F0000E820D /* Sources */,
 				190C07A7276DA7F0000E820D /* Frameworks */,
@@ -301,9 +301,9 @@
 			dependencies = (
 				190C07AC276DA7F0000E820D /* PBXTargetDependency */,
 			);
-			name = "Bookmark AppUITests";
+			name = BookmarkUITests;
 			productName = "Bookmark AppUITests";
-			productReference = 190C07AA276DA7F0000E820D /* Bookmark AppUITests.xctest */;
+			productReference = 190C07AA276DA7F0000E820D /* BookmarkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 190C0786276DA7ED000E820D /* Build configuration list for PBXProject "Bookmark App" */;
+			buildConfigurationList = 190C0786276DA7ED000E820D /* Build configuration list for PBXProject "Bookmark" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,9 +346,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				190C078A276DA7ED000E820D /* Bookmark App */,
-				190C079F276DA7F0000E820D /* Bookmark AppTests */,
-				190C07A9276DA7F0000E820D /* Bookmark AppUITests */,
+				190C078A276DA7ED000E820D /* Bookmark */,
+				190C079F276DA7F0000E820D /* BookmarkTests */,
+				190C07A9276DA7F0000E820D /* BookmarkUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -453,12 +453,12 @@
 /* Begin PBXTargetDependency section */
 		190C07A2276DA7F0000E820D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 190C078A276DA7ED000E820D /* Bookmark App */;
+			target = 190C078A276DA7ED000E820D /* Bookmark */;
 			targetProxy = 190C07A1276DA7F0000E820D /* PBXContainerItemProxy */;
 		};
 		190C07AC276DA7F0000E820D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 190C078A276DA7ED000E820D /* Bookmark App */;
+			target = 190C078A276DA7ED000E820D /* Bookmark */;
 			targetProxy = 190C07AB276DA7F0000E820D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -606,7 +606,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "JamesD.Bookmark-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bookmark;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,7 +639,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "JamesD.Bookmark-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bookmark;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,7 +667,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookmark App.app/Bookmark App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookmark.app/Bookmark";
 			};
 			name = Debug;
 		};
@@ -692,7 +692,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookmark App.app/Bookmark App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookmark.app/Bookmark";
 			};
 			name = Release;
 		};
@@ -745,7 +745,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		190C0786276DA7ED000E820D /* Build configuration list for PBXProject "Bookmark App" */ = {
+		190C0786276DA7ED000E820D /* Build configuration list for PBXProject "Bookmark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190C07B2276DA7F0000E820D /* Debug */,
@@ -754,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		190C07B4276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark App" */ = {
+		190C07B4276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190C07B5276DA7F0000E820D /* Debug */,
@@ -763,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		190C07B7276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark AppTests" */ = {
+		190C07B7276DA7F0000E820D /* Build configuration list for PBXNativeTarget "BookmarkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190C07B8276DA7F0000E820D /* Debug */,
@@ -772,7 +772,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		190C07BA276DA7F0000E820D /* Build configuration list for PBXNativeTarget "Bookmark AppUITests" */ = {
+		190C07BA276DA7F0000E820D /* Build configuration list for PBXNativeTarget "BookmarkUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				190C07BB276DA7F0000E820D /* Debug */,
