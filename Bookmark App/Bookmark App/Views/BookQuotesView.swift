@@ -57,38 +57,39 @@ struct AsyncBookQuotesView: View {
                            content: { image in
                     image
                         .resizable()
-                        .scaledToFit()
                         .border(.gray, width: 2)
+                        .cornerRadius(5)
+                        .scaledToFit()
                         .padding()
-                        .shadow(color: .black, radius: 4, x: 4, y: 4)
+                        .shadow(color: .black, radius: 6, x: 4, y: 4)
                 }, placeholder: {
                     ProgressView()
                 })
+                
                 Text(bookView.title)
                     .font(.title2)
             }
             .padding()
-            .border(.gray, width: 2)
-            .cornerRadius(3)
+            
             if let currentBook = currentBook, currentBook.quotes?.count ?? 0 < 1 {
-                    Text("There are no quotes for this book yet.")
+                Text("There are no quotes for this book yet.")
                     .font(.headline)
                     .offset(y: 10)
             }
             List {
                 if !library.isEmpty,
                    let currentBook = currentBook {
-                       ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
-                           if let quoteText = quote.text {
-                               let displayedQuote = quoteText.count < 100 ?
-                               quoteText :
-                               quoteText.prefix(upTo: quoteText.index(quoteText.startIndex, offsetBy: 100)) + "..."
-                               NavigationLink(displayedQuote, destination: QuoteView(text: quoteText))
-                                   .padding()
-                           }
-                       }
-                       .onDelete(perform: deleteBook)
-                   }
+                    ForEach(Array(currentBook.quotes as! Set<Quote>), id: \.self) { quote in
+                        if let quoteText = quote.text {
+                            let displayedQuote = quoteText.count < 100 ?
+                            quoteText :
+                            quoteText.prefix(upTo: quoteText.index(quoteText.startIndex, offsetBy: 100)) + "..."
+                            NavigationLink(displayedQuote, destination: QuoteView(text: quoteText))
+                                .padding()
+                        }
+                    }
+                    .onDelete(perform: deleteBook)
+                }
             }
             
             let bookAlreadyInLibrary = !library.filter { $0.title == bookView.title }.isEmpty
