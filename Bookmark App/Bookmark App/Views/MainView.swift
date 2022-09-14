@@ -81,7 +81,7 @@ struct CaptureButton: View {
             LinearGradient(gradient: Gradient(colors: [.white, .cyan, .blue, .cyan]), startPoint: .top, endPoint: .bottom)
         )
         .cornerRadius(200)
-        .shadow(color: .primary, radius: 1, x: 0, y: 2)
+        .shadow(color: .primary, radius: 1.5, x: 0, y: 2)
         .onTapGesture {
             handleTap()
         }
