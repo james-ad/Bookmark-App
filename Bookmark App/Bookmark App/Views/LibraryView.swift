@@ -12,9 +12,6 @@ struct LibraryView: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @Environment(\.managedObjectContext) var moc
     
-    //    ForEach(Array(sample.stepps! as Set), id: \.self) { step in
-    //        // step is NSObject type, so you'll need it cast to your model
-    //    }
     var body: some View {
         NavigationView {
             if library.isEmpty {
@@ -25,15 +22,11 @@ struct LibraryView: View {
                         AsyncBookCell(bookView: bookViewFromBook(book: book))
                     }
                     .onDelete(perform: deleteBook)
-                    //                .onMove(perform: moveBook)
                 }
                 .navigationTitle("Library")
                 .toolbar {
                     HStack {
                         EditButton().moveDisabled(true)
-                        //                    NavigationLink(destination: AddBookView()) {
-                        //                        Image(systemName: "plus")
-                        //                    }
                     }
                 }
             }
