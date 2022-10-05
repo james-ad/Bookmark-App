@@ -135,27 +135,3 @@ struct ScrollableBook: View {
         .padding(15)
     }
 }
-
-//struct ScrollableBook: View {
-//    var book: BookView
-//
-//    var body: some View {
-//        VStack {
-//            Image(book.imageName)
-//                .resizable()
-//                .scaledToFit()
-//                .cornerRadius(3)
-//            Spacer()
-//            VStack(alignment: .center) {
-//                Text(book.title)
-//                Text(book.author)
-//                    .font(.subheadline)
-//                    .foregroundColor(.secondary)
-//            }
-//            Spacer()
-//            Spacer()
-//        }
-//        .background(.clear)
-//        .padding(15)
-//    }
-//}
