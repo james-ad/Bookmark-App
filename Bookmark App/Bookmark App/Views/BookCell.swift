@@ -10,10 +10,6 @@ import SwiftUI
 struct BookCell: View {
     var book: BookView
     
-//    ForEach(Array(sample.stepps! as Set), id: \.self) { step in
-//        // step is NSObject type, so you'll need it cast to your model
-//    }
-    
     var body: some View {
         NavigationLink(destination: BookQuotesView(image: book.imageName,
                                                    title: book.title,
