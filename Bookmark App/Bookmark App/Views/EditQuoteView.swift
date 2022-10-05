@@ -12,7 +12,6 @@ public struct EditQuoteView: View {
         VStack {
             Spacer()
             Text("Books")
-            //            Menu("Choose book") {
             Spacer()
             BookList(books: testStore.books, selectedBook: testStore.books[0].title)
             Spacer()
