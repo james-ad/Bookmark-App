@@ -77,15 +77,18 @@ struct ScrollableLibraryView: View {
             }
             
             VStack {
-                Text("Book not in your library yet?")
-                Button(action: {
-                    self.shouldPerformSearch.toggle()
-                }) {
-                    Text("Add new book")
-                }.sheet(isPresented: $shouldPerformSearch) {
-                    BookSearch()
-                }
-                .buttonStyle(.bordered)
+                Text("Book not in your library yet? Go to the \"Search\" to add it before saving your quote.")
+                    .multilineTextAlignment(.center)
+                // TODO: Comment out button until odd behavior can be fixed
+                // MARK: Right now, the quotes view is presented when book is selected because of didFinishPickingImage inside of AsyncBookQuotesView where it presents CapturedQuoteView
+                //                Button(action: {
+                //                    self.shouldPerformSearch.toggle()
+                //                }) {
+                //                    Text("Add new book")
+                //                }.sheet(isPresented: $shouldPerformSearch) {
+                //                    BookSearch()
+                //                }
+                //                .buttonStyle(.bordered)
             }
             .offset(y: 60)
         }

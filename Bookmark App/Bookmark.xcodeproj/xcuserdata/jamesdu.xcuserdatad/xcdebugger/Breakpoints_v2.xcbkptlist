@@ -7,17 +7,401 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7EECC593-988B-4CCA-A465-780E1EE99F7E"
+            uuid = "A958DF5A-04B9-4578-882F-1679DE0F87E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bookmark App/Views/MainView.swift"
+            filePath = "Bookmark App/Views/BookSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "This can probably be made more efficient with a dictionary or a tree"
+            landmarkType = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bookmark App/CameraLauncher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CameraLauncher"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 241fe0fe9c66df85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Bookmark.CameraLauncher.didFinishPickingImage : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - b125dec849f4299d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didFinishPickingImage.getter : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 3d132cfb177da1b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didFinishPickingImage.setter : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 5888c3e2aa94db66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didFinishPickingImage.modify : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - c0e3cc776151a21c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didFinishPickingImage.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 2a231b33f482d0be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didFinishPickingImage.getter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - e0c2189933341caa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didFinishPickingImage.setter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 4b8e6792a29a43e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didFinishPickingImage.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 1bcea32f3d80f819"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didFinishPickingImage.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "547F745A-FCCA-4BF3-8E7E-70A31A5EA655 - 127e6d80ffcad14b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.init(didFinishPickingImage: Swift.Bool, didSaveQuote: Swift.Bool) -&gt; Bookmark.CameraLauncher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bookmark App/CameraLauncher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "CameraLauncher"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 748af2bf7277089b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Bookmark.CameraLauncher.didSaveQuote : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 63cf7eeea658ed75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didSaveQuote.getter : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 20c4c32cf10bd561"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didSaveQuote.setter : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 5075088cb38d372"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didSaveQuote.modify : Swift.Bool"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - a2caaa9864e7bb61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.didSaveQuote.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 685b570ed798a148"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didSaveQuote.getter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 9737c5d369caed44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didSaveQuote.setter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 3928df8f04e05068"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didSaveQuote.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 9f5cf38186078c7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.$didSaveQuote.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "0D28D5A4-CF81-485E-B2FD-E43CFF94F965 - 127e6d80ffcad128"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CameraLauncher.init(didFinishPickingImage: Swift.Bool, didSaveQuote: Swift.Bool) -&gt; Bookmark.CameraLauncher"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/CameraLauncher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "692D254C-04DB-4A40-9501-B9836F91C4CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bookmark App/Views/CapturedQuoteView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
             endingLineNumber = "10"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CapturedQuoteView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "692D254C-04DB-4A40-9501-B9836F91C4CF - defec613816a7799"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CapturedQuoteView.init() -&gt; Bookmark.CapturedQuoteView"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/Views/CapturedQuoteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "692D254C-04DB-4A40-9501-B9836F91C4CF - 9ccc0a283f3e9a60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bookmark.CapturedQuoteView.init(capturedQuote: SwiftUI.EnvironmentObject&lt;Bookmark.CapturedQuote&gt;) -&gt; Bookmark.CapturedQuoteView"
+                  moduleName = "Bookmark"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesdu/Projects/Bookmark-App/Bookmark%20App/Bookmark%20App/Views/CapturedQuoteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
