@@ -85,7 +85,6 @@ struct ScrollableLibraryView: View {
                 // MARK: Right now, the quotes view is presented when book is selected because of didFinishPickingImage inside of AsyncBookQuotesView where it presents CapturedQuoteView
                                 Button(action: {
                                     bookSearchController.shouldPresentSearchPage = true
-//                                    self.shouldPerformSearch.toggle()
                                 }) {
                                     Text("Add new book")
                                 }.sheet(isPresented: $bookSearchController.shouldPresentSearchPage) {
