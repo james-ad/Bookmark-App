@@ -1,49 +1,18 @@
 //
-//  BookQuotesView.swift
-//  Bookmark App
+//  SearchedBookSelection.swift
+//  Bookmark
 //
-//  Created by James Dunn on 1/15/22.
+//  Created by James Dunn on 10/16/22.
 //
 
 import SwiftUI
 import AlertToast
 
-struct BookQuotesView: View {
-    @State var image: String
-    @State var title: String
-    @State var quotes: [QuoteModel]
-    
-    var body: some View {
-        VStack {
-            VStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .border(.gray, width: 2)
-                    .padding()
-                    .shadow(color: .black, radius: 4, x: 4, y: 4)
-                Text(title)
-                    .font(.title2)
-            }
-            .padding()
-            .border(.gray, width: 5)
-            .cornerRadius(3)
-            
-            List {
-                ForEach(quotes) { quote in
-                    Text(quote.text)
-                }
-            }
-        }
-    }
-}
-
-struct AsyncBookQuotesView: View {
+struct SearchedBookSelection: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var cameraLauncher: CameraLauncher
-    @EnvironmentObject var bookSearchController: ModularBookSearchController
     @State private var quoteShouldBeAdded: Bool = false
     @State private var image = UIImage()
     var bookView: BookView
@@ -114,13 +83,15 @@ struct AsyncBookQuotesView: View {
                     book.imageURL = bookView.imageName
                     try? moc.save()
                     print("Book was successfully added to Core Data")
-                    bookSearchController.shouldPresentSearchPage = false
                     presentationMode.wrappedValue.dismiss()
                 })
                 .padding()
                 .sheet(isPresented: $quoteShouldBeAdded) {
                     ImagePicker(selectedImage: self.$image, sourceType: .camera)
                 }}
+        }
+        .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
+            CapturedQuoteView()
         }
         .toast(isPresenting: $cameraLauncher.didSaveQuote,
                duration: 2,
@@ -150,8 +121,3 @@ struct AsyncBookQuotesView: View {
     }
 }
 
-struct BookQuotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookQuotesView(image: testStore.books[0].imageName, title: "Test Title", quotes: [testQuotes[0]])
-    }
-}

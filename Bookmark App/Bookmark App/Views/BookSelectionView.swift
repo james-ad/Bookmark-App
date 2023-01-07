@@ -25,9 +25,11 @@ struct BookSelectionView_Previews: PreviewProvider {
 struct ScrollableLibraryView: View {
     @FetchRequest(sortDescriptors: []) var library: FetchedResults<Book>
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var store: BookStore
     @EnvironmentObject var capturedQuote: CapturedQuote
     @EnvironmentObject var cameraLauncher: CameraLauncher
+    @EnvironmentObject var bookSearchController: ModularBookSearchController
     @State var shouldPerformSearch: Bool = false
     @State private var selectedBook = BookView(author: "", imageName: "", title: "", quotes: [QuoteModel(text: "")])
     
@@ -81,14 +83,15 @@ struct ScrollableLibraryView: View {
                     .multilineTextAlignment(.center)
                 // TODO: Comment out button until odd behavior can be fixed
                 // MARK: Right now, the quotes view is presented when book is selected because of didFinishPickingImage inside of AsyncBookQuotesView where it presents CapturedQuoteView
-                //                Button(action: {
-                //                    self.shouldPerformSearch.toggle()
-                //                }) {
-                //                    Text("Add new book")
-                //                }.sheet(isPresented: $shouldPerformSearch) {
-                //                    BookSearch()
-                //                }
-                //                .buttonStyle(.bordered)
+                                Button(action: {
+                                    bookSearchController.shouldPresentSearchPage = true
+//                                    self.shouldPerformSearch.toggle()
+                                }) {
+                                    Text("Add new book")
+                                }.sheet(isPresented: $bookSearchController.shouldPresentSearchPage) {
+                                    ModularBookSearch()
+                                }
+                                .buttonStyle(.bordered)
             }
             .offset(y: 60)
         }
@@ -106,6 +109,7 @@ struct ScrollableLibraryView: View {
         }
         cameraLauncher.didFinishPickingImage = false
         cameraLauncher.didSaveQuote = true
+        presentationMode.wrappedValue.dismiss()
     }
     
 }
