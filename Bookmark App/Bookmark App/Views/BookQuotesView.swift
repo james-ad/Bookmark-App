@@ -43,6 +43,7 @@ struct AsyncBookQuotesView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var cameraLauncher: CameraLauncher
+    @EnvironmentObject var bookSearchController: ModularBookSearchController
     @State private var quoteShouldBeAdded: Bool = false
     @State private var image = UIImage()
     var bookView: BookView
@@ -113,15 +114,13 @@ struct AsyncBookQuotesView: View {
                     book.imageURL = bookView.imageName
                     try? moc.save()
                     print("Book was successfully added to Core Data")
+                    bookSearchController.shouldPresentSearchPage = false
                     presentationMode.wrappedValue.dismiss()
                 })
                 .padding()
                 .sheet(isPresented: $quoteShouldBeAdded) {
                     ImagePicker(selectedImage: self.$image, sourceType: .camera)
                 }}
-        }
-        .sheet(isPresented: $cameraLauncher.didFinishPickingImage) {
-            CapturedQuoteView()
         }
         .toast(isPresenting: $cameraLauncher.didSaveQuote,
                duration: 2,

@@ -24,6 +24,7 @@ struct Bookmark_App: App {
     @StateObject private var store = testStore
     @StateObject private var capturedQuote = CapturedQuote()
     @StateObject private var cameraLauncher = CameraLauncher()
+    @StateObject private var bookSearchController = ModularBookSearchController()
     
     var body: some Scene {
         WindowGroup {
@@ -53,6 +54,7 @@ struct Bookmark_App: App {
             .environmentObject(cameraLauncher)
             .environmentObject(capturedQuote)
             .environmentObject(store)
+            .environmentObject(bookSearchController)
             .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

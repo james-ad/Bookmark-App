@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,6 +57,8 @@
 		19F21E81287F4C5F00F122C5 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F21E80287F4C5F00F122C5 /* BookCell.swift */; };
 		7C174C8528972512008AFC82 /* BookAppHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C174C8428972512008AFC82 /* BookAppHelpers.swift */; };
 		7C5D975B2840048A002AB88D /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 7C5D975A2840048A002AB88D /* AlertToast */; };
+		7CC0FF8728FCA8370059BB1C /* ModularBookSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC0FF8628FCA8370059BB1C /* ModularBookSearch.swift */; };
+		7CF5BE2B296A0F90000B9D1C /* ModularBookSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5BE2A296A0F90000B9D1C /* ModularBookSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		19E068A62793D65100E52895 /* BookQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQuotesView.swift; sourceTree = "<group>"; };
 		19F21E80287F4C5F00F122C5 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		7C174C8428972512008AFC82 /* BookAppHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAppHelpers.swift; path = "Bookmark App/BookAppHelpers.swift"; sourceTree = "<group>"; };
+		7CC0FF8628FCA8370059BB1C /* ModularBookSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularBookSearch.swift; sourceTree = "<group>"; };
+		7CF5BE2A296A0F90000B9D1C /* ModularBookSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularBookSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 				19C9882C27E6A84E002C6EAE /* ImagePicker.swift */,
 				19C4BA4227EE002C006618EF /* CapturedQuote.swift */,
 				19C4BA4627F665FF006618EF /* CameraLauncher.swift */,
+				7CF5BE2A296A0F90000B9D1C /* ModularBookSearchController.swift */,
 				190DF5042842EEB0009F5ABF /* BookSearchNetworkClient.swift */,
 			);
 			path = "Bookmark App";
@@ -243,6 +248,7 @@
 				19C4BA4427EE55DE006618EF /* BookSelectionView.swift */,
 				19F21E80287F4C5F00F122C5 /* BookCell.swift */,
 				191D68E428BC5BC80007EA62 /* QuoteView.swift */,
+				7CC0FF8628FCA8370059BB1C /* ModularBookSearch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,7 +336,7 @@
 				};
 			};
 			buildConfigurationList = 190C0786276DA7ED000E820D /* Build configuration list for PBXProject "Bookmark" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -384,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF5BE2B296A0F90000B9D1C /* ModularBookSearchController.swift in Sources */,
 				1944ED522781095D00EF69B2 /* EditQuoteView.swift in Sources */,
 				1938C2A3284528C900683BA1 /* StorageManager.swift in Sources */,
 				19C4BA4127EC20CB006618EF /* CapturedQuoteView.swift in Sources */,
@@ -396,6 +403,7 @@
 				198A58072851A8330081D6FF /* Library+CoreDataClass.swift in Sources */,
 				198A58092851A8330081D6FF /* Book+CoreDataClass.swift in Sources */,
 				191D68E528BC5BC80007EA62 /* QuoteView.swift in Sources */,
+				7CC0FF8728FCA8370059BB1C /* ModularBookSearch.swift in Sources */,
 				19C4BA4727F665FF006618EF /* CameraLauncher.swift in Sources */,
 				1992B84727ACA4F400F3B1A2 /* QuoteCaptureViewController.swift in Sources */,
 				198A580A2851A8330081D6FF /* Book+CoreDataProperties.swift in Sources */,
