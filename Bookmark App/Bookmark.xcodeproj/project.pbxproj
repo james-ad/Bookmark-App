@@ -346,7 +346,6 @@
 			mainGroup = 190C0782276DA7ED000E820D;
 			packageReferences = (
 				7C5D97592840048A002AB88D /* XCRemoteSwiftPackageReference "AlertToast" */,
-				1938C29E2845260C00683BA1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 190C078C276DA7ED000E820D /* Products */;
 			projectDirPath = "";
@@ -792,14 +791,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1938C29E2845260C00683BA1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		7C5D97592840048A002AB88D /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
