@@ -31,6 +31,7 @@ struct LibraryView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func moveBook(from: IndexSet, to: Int) {

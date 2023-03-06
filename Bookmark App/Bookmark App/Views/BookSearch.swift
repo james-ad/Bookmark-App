@@ -34,6 +34,7 @@ struct BookSearch: View {
                 .navigationTitle("Search")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func performNewSearch(withText text: String) {
